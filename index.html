@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSE IT Solution Services | Solusi IT Profesional</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <span class="brand-rse">RSE</span> <span class="brand-it">IT</span> <span class="brand-solution">Solution Services</span>
+    </a>
+    
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#home" id="navHome">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about" id="navAbout">Tentang</a></li>
+        
+        <!-- Services Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Layanan</a>
+          <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+            <li><a class="dropdown-item" href="#manage-service" id="navManageService">Manage Service</a></li>
+            <li><a class="dropdown-item" href="#network-infrastructure" id="navNetwork">Network Infrastructure</a></li>
+            <li><a class="dropdown-item" href="#security-infrastructure" id="navSecurity">Security Infrastructure</a></li>
+            <li><a class="dropdown-item" href="#website-development" id="navWebsite">Jasa Pembuatan Website</a></li>
+            <li><a class="dropdown-item" href="#iot" id="navIot">IOT Solutions</a></li>
+            <li><a class="dropdown-item" href="#procurement" id="navProcurement">Pengadaan Barang</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item"><a class="nav-link" href="#projects" id="navProjects">Portofolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact" id="navContact">Kontak</a></li>
+
+    <!-- Language Switcher -->
+    <div class="nav-language">
+      <button class="lang-btn active" data-lang="id">ID</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero-section">
+  <div class="container">
+    <div class="row align-items-center min-vh-100">
+      <div class="col-lg-7" data-aos="fade-right">
+        <div class="hero-badge">
+          <span class="badge-tech"><i class="fas fa-shield-alt"></i> <span id="heroTrusted">Terpercaya sejak 2024</span></span>
+        </div>
+        <h1 class="hero-title" id="heroTitle">Reliable IT Solutions & Professional Services</h1>
+        <p class="hero-subtitle" id="heroSubtitle">Memberdayakan Bisnis Anda dengan Teknologi yang Aman, Skalabel & Cerdas</p>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">12+</span>
+            <span class="stat-label" id="heroYears">Tahun Pengalaman</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label" id="heroProjects">Proyek Selesai</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label" id="heroSupport">Dukungan</span>
+          </div>
+        </div>
+        
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary btn-lg"><span id="heroConsultation">Konsultasi Gratis</span> <i class="fas fa-arrow-right ms-2"></i></a>
+          <a href="#services" class="btn btn-outline-orange btn-lg"><span id="heroServices">Layanan Kami</span></a>
+        </div>
+      </div>
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="hero-image">
+          <div class="floating-card card-1">
+            <i class="fas fa-shield-alt"></i>
+            <span id="heroSecure">Aman</span>
+          </div>
+          <div class="floating-card card-2">
+            <i class="fas fa-cloud"></i>
+            <span id="heroCloud">Cloud</span>
+          </div>
+          <div class="floating-card card-3">
+            <i class="fas fa-network-wired"></i>
+            <span id="heroNetwork">Jaringan</span>
+          </div>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%230A1F44'/%3E%3Ccircle cx='300' cy='300' r='150' fill='none' stroke='%23007BFF' stroke-width='4' stroke-dasharray='10 10'/%3E%3Ccircle cx='300' cy='300' r='100' fill='none' stroke='%23FF7A00' stroke-width='4'/%3E%3Cpath d='M300 150 L300 450 M150 300 L450 300' stroke='%23007BFF' stroke-width='2' opacity='0.5'/%3E%3Ctext x='250' y='320' font-family='Inter' font-size='24' fill='white'%3ERSE%3C/text%3E%3C/svg%3E" alt="hero illustration" class="hero-img">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT US -->
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle" id="aboutSubtitle">Tentang Perusahaan</span>
+      <h2 class="section-title" id="aboutTitle">RSE IT Solution Services</h2>
+      <div class="title-line"></div>
+    </div>
+    
+    <div class="row g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="about-content">
+          <p class="about-text" id="aboutDescription">Kami adalah tim yang terdiri dari ahli strategi teknologi, arsitek jaringan, dan pakar keamanan siber yang berdedikasi untuk mempersiapkan masa depan perusahaan Anda. Dengan pengalaman lebih dari 12 tahun dalam mendesain, menerapkan, dan mengelola infrastruktur IT yang tangguh untuk mendorong pertumbuhan bisnis.</p>
+          
+          <div class="vision-mission">
+            <div class="vm-item">
+              <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
+              <div>
+                <h4 id="aboutVision">Visi</h4>
+                <p id="aboutVisionText">Menjadi mitra terpercaya dalam transformasi digital di Indonesia.</p>
+              </div>
+            </div>
+            <div class="vm-item">
+              <div class="vm-icon"><i class="fas fa-flag"></i></div>
+              <div>
+                <h4 id="aboutMission">Misi</h4>
+                <p id="aboutMissionText">Memberikan solusi yang aman, inovatif, dan skalabel dengan layanan prima.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="why-us-container">
+          <h3 class="mb-4" id="aboutWhyTitle">Mengapa Memilih Kami</h3>
+          <div class="why-grid">
+            <div class="why-item">
+              <div class="why-icon"><i class="fas fa-trophy"></i></div>
+              <div>
+                <h4 id="aboutWhy1Title">Engineer Berpengalaman</h4>
+                <p id="aboutWhy1Desc">Tim profesional dengan sertifikasi</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon"><i class="fas fa-rocket"></i></div>
+              <div>
+                <h4 id="aboutWhy2Title">Respon Cepat</h4>
+                <p id="aboutWhy2Desc">Response time < 15 menit</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon"><i class="fas fa-lock"></i></div>
+              <div>
+                <h4 id="aboutWhy3Title">Aman & Terpercaya</h4>
+                <p id="aboutWhy3Desc">99.9% Uptime, enkripsi data</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon"><i class="fas fa-chart-line"></i></div>
+              <div>
+                <h4 id="aboutWhy4Title">Harga Bersaing</h4>
+                <p id="aboutWhy4Desc">Solusi sesuai budget Anda</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANAGE SERVICE SECTION -->
+<section id="manage-service" class="service-detail-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle" id="manageSubtitle">Layanan Utama</span>
+      <h2 class="section-title" id="manageTitle">Manage Service</h2>
+      <div class="title-line"></div>
+    </div>
+    
+    <div class="row g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="service-description">
+          <p class="service-desc-text" id="manageDescription">Layanan pengelolaan IT menyeluruh yang mencakup pemeliharaan preventif dan korektif untuk memastikan infrastruktur teknologi Anda selalu dalam kondisi optimal.</p>
+          
+          <div class="service-split">
+            <div class="split-card preventive">
+              <h4><i class="fas fa-calendar-check"></i> <span id="managePreventive">Preventive Maintenance</span></h4>
+              <ul>
+                <li id="managePrev1">Pemeriksaan rutin hardware & software</li>
+                <li id="managePrev2">Update security patch & antivirus</li>
+                <li id="managePrev3">Backup data terjadwal</li>
+                <li id="managePrev4">Monitoring performa 24/7</li>
+                <li id="managePrev5">Audit keamanan berkala</li>
+              </ul>
+            </div>
+            <div class="split-card corrective">
+              <h4><i class="fas fa-tools"></i> <span id="manageCorrective">Corrective Maintenance</span></h4>
+              <ul>
+                <li id="manageCorr1">Response darurat < 1 jam</li>
+                <li id="manageCorr2">Perbaikan hardware/software</li>
+                <li id="manageCorr3">Data recovery</li>
+                <li id="manageCorr4">Root cause analysis</li>
+                <li id="manageCorr5">Reporting & rekomendasi</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="service-support">
+          <h4 id="manageSupported">Yang Kami Dukung:</h4>
+          <div class="support-grid">
+            <div class="support-item"><i class="fas fa-server"></i> Server</div>
+            <div class="support-item"><i class="fas fa-network-wired"></i> Network</div>
+            <div class="support-item"><i class="fas fa-database"></i> Database</div>
+            <div class="support-item"><i class="fas fa-desktop"></i> Workstation</div>
+            <div class="support-item"><i class="fas fa-print"></i> Printer</div>
+            <div class="support-item"><i class="fas fa-cloud"></i> Cloud</div>
+            <div class="support-item"><i class="fas fa-shield-alt"></i> Security</div>
+            <div class="support-item"><i class="fas fa-mobile-alt"></i> Mobile Device</div>
+          </div>
+          
+          <div class="service-benefits mt-4">
+            <h4 id="manageBenefits">Keuntungan:</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> <span id="manageBenefit1">Minimalkan downtime hingga 99.9%</span></li>
+              <li><i class="fas fa-check-circle"></i> <span id="manageBenefit2">Biaya operasional lebih terprediksi</span></li>
+              <li><i class="fas fa-check-circle"></i> <span id="manageBenefit3">Fokus pada bisnis inti</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NETWORK INFRASTRUCTURE SECTION -->
+<section id="network-infrastructure" class="service-detail-section bg-soft">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle" id="networkSubtitle">Infrastruktur Jaringan</span>
+      <h2 class="section-title" id="networkTitle">Network Infrastructure</h2>
+      <div class="title-line"></div>
+    </div>
+    
+    <div class="row g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="service-description">
+          <p class="service-desc-text" id="networkDescription">Kami merancang, membangun, dan mengelola infrastruktur jaringan yang handal, scalable, dan aman untuk mendukung konektivitas bisnis Anda dengan performa tinggi.</p>
+          
+          <div class="service-split">
+            <div class="split-card">
+              <h4><i class="fas fa-check-circle"></i> <span id="networkFeatures">Fitur Utama</span></h4>
+              <ul>
+                <li id="networkFeature1">Desain jaringan enterprise-grade</li>
+                <li id="networkFeature2">Redundancy & high availability</li>
+                <li id="networkFeature3">Quality of Service (QoS)</li>
+                <li id="networkFeature4">Network segmentation</li>
+                <li id="networkFeature5">Monitoring & analytics real-time</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="service-support">
+          <h4 id="networkSupported">Yang Kami Sediakan:</h4>
+          <div class="support-grid">
+            <div class="support-item">LAN/WAN</div>
+            <div class="support-item">Wireless</div>
+            <div class="support-item">Firewall</div>
+            <div class="support-item">Load Balancer</div>
+            <div class="support-item">VPN</div>
+            <div class="support-item">SD-WAN</div>
+            <div class="support-item">CCTV Network</div>
+            <div class="support-item">Fiber Optic</div>
+          </div>
+          
+          <h4 class="mt-4" id="networkSolutions">Solusi Lengkap:</h4>
+          <ul class="solution-list">
+            <li><i class="fas fa-angle-right"></i> <span id="networkSol1">LAN/WAN Design & Implementation</span></li>
+            <li><i class="fas fa-angle-right"></i> <span id="networkSol2">Wireless & Mobility Solutions</span></li>
+            <li><i class="fas fa-angle-right"></i> <span id="networkSol3">Network Security & Firewall</span></li>
+            <li><i class="fas fa-angle-right"></i> <span id="networkSol4">Network Monitoring & Management</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY INFRASTRUCTURE SECTION -->
+<section id="security-infrastructure" class="service-detail-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle" id="securitySubtitle">Keamanan Infrastruktur</span>
+      <h2 class="section-title" id="securityTitle">Security Infrastructure</h2>
+      <div class="title-line"></div>
+    </div>
+    
+    <div class="row g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="service-description">
+          <p class="service-desc-text" id="securityDescription">Melindungi aset digital dan infrastruktur kritis perusahaan Anda dengan pendekatan keamanan berlapis yang mencakup pencegahan, deteksi, dan respons terhadap ancaman siber.</p>
+          
+          <div class="security-layers">
+            <div class="layer-item">
+              <span class="layer-icon"><i class="fas fa-shield"></i></span>
+              <span id="securityLayer1">Cegah</span>
+            </div>
+            <div class="layer-item">
+              <span class="layer-icon"><i class="fas fa-eye"></i></span>
+              <span id="securityLayer2">Deteksi</span>
+            </div>
+            <div class="layer-item">
+              <span class="layer-icon"><i class="fas fa-bolt"></i></span>
+              <span id="securityLayer3">Respon</span>
+            </div>
+            <div class="layer-item">
+              <span class="layer-icon"><i class="fas fa-sync-alt"></i></span>
+              <span id="securityLayer4">Pulihkan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="service-support">
+          <h4 id="securitySupported">Layanan Keamanan:</h4>
+          <ul class="security-list">
+            <li><i class="fas fa-check-circle"></i> <span id="securityServ1">Firewall & IPS/IDS</span></li>
+            <li><i class="fas fa-check-circle"></i> <span id="securityServ2">Antivirus & Antimalware</span></li>
+            <li><i class="fas fa-check-circle"></i> <span id="securityServ3">Endpoint Protection</span></li>
+            <li><i class="fas fa-check-circle"></i> <span id="securityServ4">Security Monitoring</span></li>
+            <li><i class="fas fa-check-circle"></i> <span id="securityServ5">Vulnerability Assessment</span></li>
+            <li><i class="fas fa-check-circle"></i> <span id="securityServ6">DDoS Protection</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEBSITE DEVELOPMENT SECTION -->
+<section id="website-development" class="service-detail-section bg-soft">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle" id="websiteSubtitle">Jasa Pembuatan Website</span>
+      <h2 class="section-title" id="websiteTitle">Website Development</h2>
+      <div class="title-line"></div>
+    </div>
+    
+    <div class="row g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="service-description">
+          <p class="service-desc-text" id="websiteDescription">Kami membantu Anda membangun website profesional yang responsif, cepat, dan SEO-friendly untuk meningkatkan visibilitas bisnis Anda di dunia digital.</p>
+          
+          <div class="website-types">
+            <h4 id="websiteTypes">Jenis Website:</h4>
+            <div class="types-grid">
+              <div class="type-item">
+                <i class="fas fa-building"></i>
+                <h5 id="websiteType1">Company Profile</h5>
+                <p id="websiteType1Desc">Website profesional untuk memperkenalkan perusahaan Anda</p>
+              </div>
+              <div class="type-item">
+                <i class="fas fa-shopping-cart"></i>
+                <h5 id="websiteType2">E-Commerce</h5>
+                <p id="websiteType2Desc">Toko online dengan sistem pembayaran terintegrasi</p>
+              </div>
+              <div class="type-item">
+                <i class="fas fa-wordpress"></i>
+                <h5 id="websiteType3">CMS Website</h5>
+                <p id="websiteType3Desc">Website dengan konten yang mudah diupdate</p>
+              </div>
+              <div class="type-item">
+                <i class="fas fa-cog"></i>
+                <h5 id="websiteType4">Web Application</h5>
+                <p id="websiteType4Desc">Aplikasi web custom sesuai kebutuhan bisnis</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="service-support">
+          <h4 id="websiteFeatures">Fitur Yang Kami Tawarkan:</h4>
+          <ul class="website-features">
+            <li><i class="fas fa-check-circle"></i> <span id="websiteFeature1">Responsive Design (Mobile Friendly)</span></li>
+            <li><i class="fas fa-check-circle"></i> <span id="websiteFeature2">SEO Optimization</span></li>
+            <li><i class="fas fa-check-circle"></i> <span id="websiteFeature3">Fast Loading & Performance</span></li>
+            <li><i class="fas fa-check-circle"></i> <span id="websiteFeature4">SSL Security & HTTPS</span></li>
+            <li><i class="fas fa-check-circle"></i> <span id="websiteFeature5">Content Management System</span></li>
+            <li><i class="fas fa-check-circle"></i> <span id="websiteFeature6">Integration with Social Media</span></li>
+            <li><i class="fas fa-check-circle"></i> <span id="websiteFeature7">Google Analytics & Tracking</span></li>
+            <li><i class="fas fa-check-circle"></i> <span id="websiteFeature8">Maintenance & Support</span></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IOT SECTION -->
+<section id="iot" class="iot-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">Internet of Things</span>
+      <h2 class="section-title">IOT Solutions</h2>
+      <div class="title-line"></div>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="iot-description text-center mb-5">
+          Menghubungkan perangkat fisik ke internet untuk mengumpulkan data, mengotomatisasi proses, 
+          dan memberikan insight real-time yang membantu pengambilan keputusan bisnis yang lebih cerdas.
+        </p>
+      </div>
+    </div>
+    
+    <div class="row g-4">
+      <!-- Aplikasi IoT -->
+      <div class="col-lg-6">
+        <div class="iot-applications">
+          <h3 class="mb-4">Aplikasi IoT:</h3>
+          <div class="app-grid">
+            <div class="app-card">
+              <i class="fas fa-industry"></i>
+              <h4>Smart Manufacturing</h4>
+            </div>
+            <div class="app-card">
+              <i class="fas fa-building"></i>
+              <h4>Smart Building</h4>
+            </div>
+            <div class="app-card">
+              <i class="fas fa-thermometer-half"></i>
+              <h4>Monitoring Suhu</h4>
+            </div>
+            <div class="app-card">
+              <i class="fas fa-truck"></i>
+              <h4>Fleet Tracking</h4>
+            </div>
+            <div class="app-card">
+              <i class="fas fa-leaf"></i>
+              <h4>Smart Agriculture</h4>
+            </div>
+            <div class="app-card">
+              <i class="fas fa-hospital"></i>
+              <h4>Healthcare IoT</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Komponen IoT -->
+      <div class="col-lg-6">
+        <div class="iot-components">
+          <h3 class="mb-4">Komponen IoT:</h3>
+          <div class="components-list">
+            <div class="component-card">
+              <div class="component-icon">
+                <i class="fas fa-microchip"></i>
+              </div>
+              <div class="component-content">
+                <h4>Sensor & Device</h4>
+                <p>Temperature, motion, humidity, etc.</p>
+              </div>
+            </div>
+            
+            <div class="component-card">
+              <div class="component-icon">
+                <i class="fas fa-wifi"></i>
+              </div>
+              <div class="component-content">
+                <h4>Konektivitas</h4>
+                <p>WiFi, LoRa, 4G/5G, Bluetooth</p>
+              </div>
+            </div>
+            
+            <div class="component-card">
+              <div class="component-icon">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <div class="component-content">
+                <h4>IoT Platform</h4>
+                <p>Data collection & processing</p>
+              </div>
+            </div>
+            
+            <div class="component-card">
+              <div class="component-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="component-content">
+                <h4>Dashboard & Analytics</h4>
+                <p>Real-time monitoring & reporting</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCUREMENT SECTION -->
+<section id="procurement" class="service-detail-section bg-soft">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle" id="procurementSubtitle">Pengadaan Barang</span>
+      <h2 class="section-title" id="procurementTitle">IT Procurement</h2>
+      <div class="title-line"></div>
+    </div>
+    
+    <div class="row g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="service-description">
+          <p class="service-desc-text" id="procurementDescription">Layanan pengadaan perangkat keras, perangkat lunak, dan perlengkapan IT dengan harga kompetitif dan garansi resmi untuk mendukung kebutuhan operasional bisnis Anda.</p>
+          
+          <div class="procurement-categories">
+            <h4 id="procurementCategories">Kategori Produk:</h4>
+            
+            <div class="category-card">
+              <h5><i class="fas fa-server"></i> <span id="procurementHardware">Perangkat Keras (Hardware)</span></h5>
+              <ul>
+                <li id="procurementHard1">Server & Storage</li>
+                <li id="procurementHard2">PC, Laptop & Workstation</li>
+                <li id="procurementHard3">Switch, Router & Access Point</li>
+                <li id="procurementHard4">Firewall & Security Appliance</li>
+                <li id="procurementHard5">Printer & Scanner</li>
+                <li id="procurementHard6">CCTV & Access Control</li>
+                <li id="procurementHard7">Kabel & Connector</li>
+                <li id="procurementHard8">Rack & Enclosure</li>
+              </ul>
+            </div>
+            
+            <div class="category-card">
+              <h5><i class="fas fa-code"></i> <span id="procurementSoftware">Perangkat Lunak (Software)</span></h5>
+              <ul>
+                <li id="procurementSoft1">Lisensi Windows & Office</li>
+                <li id="procurementSoft2">Antivirus & Keamanan</li>
+                <li id="procurementSoft3">Software Server</li>
+                <li id="procurementSoft4">Database & Backup</li>
+                <li id="procurementSoft5">Aplikasi Bisnis & ERP</li>
+                <li id="procurementSoft6">Software Desain</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="service-support">
+          <div class="category-card">
+            <h5><i class="fas fa-tools"></i> <span id="procurementAccessories">Aksesoris & Sparepart</span></h5>
+            <ul>
+              <li id="procurementAcc1">Hardisk SSD/HDD</li>
+              <li id="procurementAcc2">RAM & Processor</li>
+              <li id="procurementAcc3">Power Supply & UPS</li>
+              <li id="procurementAcc4">Kabel & Adaptor</li>
+              <li id="procurementAcc5">Mouse, Keyboard & Webcam</li>
+              <li id="procurementAcc6">Tinta & Toner Printer</li>
+            </ul>
+          </div>
+          
+          <div class="procurement-process mt-4">
+            <h4 id="procurementProcess">Proses Pengadaan:</h4>
+            <div class="process-steps">
+              <div class="process-step">
+                <span class="step-num">1</span>
+                <span id="procurementStep1">Konsultasi Kebutuhan</span>
+              </div>
+              <div class="process-step">
+                <span class="step-num">2</span>
+                <span id="procurementStep2">Quote & Negosiasi</span>
+              </div>
+              <div class="process-step">
+                <span class="step-num">3</span>
+                <span id="procurementStep3">Pemesanan</span>
+              </div>
+              <div class="process-step">
+                <span class="step-num">4</span>
+                <span id="procurementStep4">Pembayaran</span>
+              </div>
+              <div class="process-step">
+                <span class="step-num">5</span>
+                <span id="procurementStep5">Pengiriman</span>
+              </div>
+              <div class="process-step">
+                <span class="step-num">6</span>
+                <span id="procurementStep6">Garansi & Dukungan</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="procurement-benefits mt-4">
+            <h4 id="procurementBenefits">Keuntungan:</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> <span id="procurementBenefit1">Harga kompetitif</span></li>
+              <li><i class="fas fa-check-circle"></i> <span id="procurementBenefit2">Garansi resmi</span></li>
+              <li><i class="fas fa-check-circle"></i> <span id="procurementBenefit3">Pengiriman cepat</span></li>
+              <li><i class="fas fa-check-circle"></i> <span id="procurementBenefit4">Dukungan teknis</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS & TESTIMONIALS SECTION -->
+<section id="projects" class="projects-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle" id="projectsSubtitle">Portofolio & Testimoni</span>
+      <h2 class="section-title" id="projectsTitle">Proyek & Ulasan Klien</h2>
+      <div class="title-line"></div>
+    </div>
+    
+    <!-- Projects -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%230A1F44'/%3E%3Ctext x='80' y='160' font-family='Inter' font-size='24' fill='white'%3ESD-WAN%3C/text%3E%3C/svg%3E" alt="Project">
+          </div>
+          <div class="project-content">
+            <h3 id="projectsProject1">SD-WAN Implementation</h3>
+            <p id="projectsProject1Desc">Implementasi jaringan SD-WAN untuk perusahaan retail</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23007BFF'/%3E%3Ctext x='80' y='160' font-family='Inter' font-size='24' fill='white'%3ESecurity%3C/text%3E%3C/svg%3E" alt="Project">
+          </div>
+          <div class="project-content">
+            <h3 id="projectsProject2">Security System</h3>
+            <p id="projectsProject2Desc">Instalasi firewall dan keamanan jaringan</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23FF7A00'/%3E%3Ctext x='50' y='160' font-family='Inter' font-size='24' fill='white'%3EWebsite%3C/text%3E%3C/svg%3E" alt="Project">
+          </div>
+          <div class="project-content">
+            <h3 id="projectsProject3">Company Website</h3>
+            <p id="projectsProject3Desc">Pembuatan website perusahaan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Testimonials -->
+    <h3 class="text-center mb-4" id="projectsTestimonials">Apa Kata Klien Kami</h3>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text" id="projectsTesti1">"Tim RSE sangat profesional dan responsif. Implementasi jaringan berjalan lancar."</p>
+          <div class="testimonial-author">
+            <strong>Andi Wijaya</strong> - PT Maju Jaya
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text" id="projectsTesti2">"Layanan maintenance sangat membantu. Respon cepat saat ada masalah."</p>
+          <div class="testimonial-author">
+            <strong>Budi Santoso</strong> - CV Karya Mandiri
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text" id="projectsTesti3">"Website yang dibuat bagus dan sesuai keinginan. Recommended!"</p>
+          <div class="testimonial-author">
+            <strong>Citra Dewi</strong> - Toko Online
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle" id="contactSubtitle">Hubungi Kami</span>
+      <h2 class="section-title" id="contactTitle">Let's Connect</h2>
+      <div class="title-line"></div>
+    </div>
+    
+    <div class="row g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="contact-form-wrapper">
+          <form id="contactForm">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="name" placeholder=" " required>
+                  <label for="name" id="contactName">Nama Lengkap</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="email" class="form-control" id="email" placeholder=" " required>
+                  <label for="email" id="contactEmail">Email</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="phone" placeholder=" ">
+                  <label for="phone" id="contactPhone">Nomor Telepon</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="company" placeholder=" ">
+                  <label for="company" id="contactCompany">Perusahaan</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <textarea class="form-control" id="message" rows="5" placeholder=" " required></textarea>
+                  <label for="message" id="contactMessage">Pesan</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-lg w-100">
+                  <span id="contactSend">Kirim Pesan</span>
+                  <i class="fas fa-paper-plane ms-2"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="contact-info-wrapper">
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="method-icon"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <h4 id="contactPhoneLabel">Telepon</h4>
+                <a href="tel:+628123456789">+62 812 3456 789</a>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="method-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h4 id="contactEmailLabel">Email</h4>
+                <a href="mailto:info@rse-it.com">info@rse-it.com</a>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="method-icon"><i class="fab fa-whatsapp"></i></div>
+              <div>
+                <h4>WhatsApp</h4>
+                <a href="#" id="contactWhatsApp">+62 812 3456 789</a>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="method-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h4 id="contactOffice">Kantor</h4>
+                <p>Jakarta, Indonesia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="row">
+        <!-- Company Info -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="footer-logo">
+            <h4>RSE <span>IT</span> Solution Services</h4>
+            <p class="tagline" id="footerTagline">Aman · Cepat · Terpercaya</p>
+          </div>
+          <p class="company-desc" id="footerDescription">Solusi IT terpercaya untuk infrastruktur, keamanan, dan pengadaan barang.</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5 id="footerQuickLinks">Tautan Cepat</h5>
+          <ul class="footer-links">
+            <li><a href="#home" id="footerHome">Beranda</a></li>
+            <li><a href="#about" id="footerAbout">Tentang</a></li>
+            <li><a href="#projects" id="footerProjects">Proyek</a></li>
+            <li><a href="#contact" id="footerContact">Kontak</a></li>
+          </ul>
+        </div>
+        
+        <!-- Services Links -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5 id="footerServices">Layanan</h5>
+          <ul class="footer-links">
+            <li><a href="#manage-service" id="footerManageService">Manage Service</a></li>
+            <li><a href="#network-infrastructure" id="footerNetwork">Network Infrastructure</a></li>
+            <li><a href="#security-infrastructure" id="footerSecurity">Security Infrastructure</a></li>
+            <li><a href="#website-development" id="footerWebsite">Jasa Pembuatan Website</a></li>
+            <li><a href="#iot" id="footerIot">IOT Solutions</a></li>
+            <li><a href="#procurement" id="footerProcurement">Pengadaan Barang</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5 id="footerContactTitle">Kontak</h5>
+          <ul class="footer-contact">
+            <li><i class="fas fa-phone-alt"></i> +62 812 3456 789</li>
+            <li><i class="fas fa-envelope"></i> info@rse-it.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
+            <li><i class="fas fa-clock"></i> <span id="footerHours">Senin - Jumat, 09:00 - 18:00</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="copyright"><span id="footerCopyright">© 2025 RSE IT Solution Services. Hak Cipta Dilindungi.</span></p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="#" id="footerPrivacy">Kebijakan Privasi</a>
+          <a href="#" id="footerTerms">Syarat & Ketentuan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS Animation -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Custom JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
