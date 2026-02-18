@@ -56,7 +56,7 @@
         <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
       </ul>
       
-      <!-- LANGUAGE DROPDOWN (DIPERBAIKI) -->
+      <!-- LANGUAGE DROPDOWN -->
       <div class="dropdown language-dropdown ms-3">
         <button class="btn btn-outline-light dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fas fa-globe me-1"></i> <span id="selected-language">Indonesia</span>
@@ -76,7 +76,6 @@
     <div class="row align-items-center min-vh-100">
       <div class="col-lg-7" data-aos="fade-right">
         <div class="hero-badge">
-          <span class="badge-tech"><i class="fas fa-shield-alt"></i> <span id="heroTrusted">Terpercaya sejak 2024</span></span>
         </div>
         <h1 class="hero-title" id="heroTitle">Reliable IT Solutions & Professional Services</h1>
         <p class="hero-subtitle" id="heroSubtitle">Memberdayakan Bisnis Anda dengan Teknologi yang Aman, Skalabel & Cerdas</p>
@@ -329,43 +328,53 @@
       <div class="col-lg-7" data-aos="fade-right">
         <div class="contact-form-wrapper p-4 bg-white rounded-4 shadow-sm h-100">
           <h5 class="mb-3 fw-bold" style="color: var(--deep-blue);">Kirim Pesan</h5>
-          <form id="contactForm">
+          
+          <!-- FORM CONTACT DENGAN EMAIL -->
+          <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="hidden" name="_subject" value="Pesan Baru dari Website RSE Digital Solution">
+            <input type="hidden" name="_template" value="table">
+            
             <div class="row g-3">
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="text" class="form-control" id="name" placeholder="Nama Lengkap" required>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Nama Lengkap" required>
                   <label for="name" id="contactName">Nama Lengkap</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="email" class="form-control" id="email" placeholder="Email" required>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                   <label for="email" id="contactEmail">Email</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="text" class="form-control" id="phone" placeholder="Nomor Telepon">
+                  <input type="tel" class="form-control" id="phone" name="phone" placeholder="Nomor Telepon">
                   <label for="phone" id="contactPhone">Nomor Telepon</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="text" class="form-control" id="company" placeholder="Perusahaan">
+                  <input type="text" class="form-control" id="company" name="company" placeholder="Perusahaan">
                   <label for="company" id="contactCompany">Perusahaan</label>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-floating">
-                  <textarea class="form-control" id="message" style="height: 100px" placeholder="Pesan" required></textarea>
+                  <textarea class="form-control" id="message" name="message" style="height: 100px" placeholder="Pesan" required></textarea>
                   <label for="message" id="contactMessage">Pesan</label>
                 </div>
               </div>
               <div class="col-12">
-                <button type="submit" class="btn btn-primary w-100 py-2">
+                <button type="submit" class="btn btn-primary w-100 py-2" id="submitBtn">
                   <span id="contactSend">Kirim Pesan</span>
                   <i class="fas fa-paper-plane ms-2"></i>
                 </button>
+              </div>
+              
+              <!-- Status Message -->
+              <div class="col-12">
+                <div id="formStatus" class="alert d-none"></div>
               </div>
             </div>
           </form>
@@ -434,12 +443,27 @@
           <p class="tagline text-info small" id="footerTagline">Aman · Cepat · Terpercaya</p>
         </div>
         <p class="company-desc small text-white-50" id="footerDescription">Solusi IT terpercaya untuk infrastruktur, keamanan, dan pengadaan barang.</p>
+        
+        <!-- SOCIAL MEDIA ICONS MENARIK -->
         <div class="footer-social d-flex gap-2">
-          <a href="#" class="social-icon bg-white bg-opacity-10 rounded-2 p-2" style="width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center;">
-            <i class="fab fa-facebook-f text-white small"></i>
+          <!-- Instagram -->
+          <a href="https://instagram.com/rse.digital" target="_blank" class="social-icon instagram" title="Instagram">
+            <i class="fab fa-instagram"></i>
           </a>
-          <a href="#" class="social-icon bg-white bg-opacity-10 rounded-2 p-2" style="width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center;">
-            <i class="fab fa-instagram text-white small"></i>
+          
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/company/rse-digital" target="_blank" class="social-icon linkedin" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          
+          <!-- Gmail -->
+          <a href="mailto:info@rse-it.com" class="social-icon gmail" title="Gmail">
+            <i class="fas fa-envelope"></i>
+          </a>
+          
+          <!-- Facebook -->
+          <a href="https://facebook.com/rse.digital" target="_blank" class="social-icon facebook" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
           </a>
         </div>
       </div>

@@ -5,15 +5,6 @@ AOS.init({
   offset: 100
 });
 
-// Initialize Bootstrap Carousel
-document.addEventListener('DOMContentLoaded', function() {
-  var carousel = new bootstrap.Carousel(document.getElementById('projectsCarousel'), {
-    interval: 3000,
-    wrap: true,
-    pause: false
-  });
-});
-
 // ==================== TRANSLATIONS ====================
 const translations = {
   id: {
@@ -79,6 +70,12 @@ const translations = {
     contactEmailLabel: 'Email',
     contactOffice: 'Kantor',
     
+    // Form Status
+    formSending: 'Mengirim...',
+    formSuccess: 'Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.',
+    formError: 'Maaf, terjadi kesalahan. Silakan coba lagi atau hubungi kami langsung via WhatsApp.',
+    formRequired: 'Harap isi semua field yang wajib diisi',
+    
     // Footer
     footerTagline: 'Aman · Cepat · Terpercaya',
     footerDescription: 'Solusi IT terpercaya untuk infrastruktur, keamanan, dan pengadaan barang.',
@@ -98,7 +95,7 @@ const translations = {
     footerHours: 'Senin - Jumat, 09:00 - 18:00',
     footerCopyright: '© 2025 RSE Digital Solution. Hak Cipta Dilindungi.',
     
-    // Modal Service Translations - ID
+    // Modal Service Translations
     modalManageTitle: 'Manage Service',
     modalManageDesc: 'Layanan pengelolaan IT menyeluruh yang mencakup pemeliharaan preventif dan korektif untuk memastikan infrastruktur teknologi Anda selalu dalam kondisi optimal.',
     modalManagePrev: 'Preventive Maintenance',
@@ -223,6 +220,12 @@ const translations = {
     contactEmailLabel: 'Email',
     contactOffice: 'Office',
     
+    // Form Status
+    formSending: 'Sending...',
+    formSuccess: 'Thank you! Your message has been sent. We will contact you soon.',
+    formError: 'Sorry, an error occurred. Please try again or contact us via WhatsApp.',
+    formRequired: 'Please fill in all required fields',
+    
     // Footer
     footerTagline: 'Secure · Fast · Trusted',
     footerDescription: 'Trusted IT solutions for infrastructure, security, and procurement.',
@@ -242,7 +245,7 @@ const translations = {
     footerHours: 'Monday - Friday, 09:00 - 18:00',
     footerCopyright: '© 2025 RSE Digital Solution. All rights reserved.',
     
-    // Modal Service Translations - EN
+    // Modal Service Translations
     modalManageTitle: 'Manage Service',
     modalManageDesc: 'Comprehensive IT management service covering preventive and corrective maintenance to ensure your technology infrastructure is always in optimal condition.',
     modalManagePrev: 'Preventive Maintenance',
@@ -316,12 +319,10 @@ function getModalContent(service, lang) {
     manage: {
       title: t.modalManageTitle,
       content: `
-        <!-- DESKRIPSI -->
         <div class="service-description">
           <p class="service-desc-text">${t.modalManageDesc}</p>
         </div>
         
-        <!-- LAYANAN SPLIT (Preventive vs Corrective) -->
         <div class="service-split mb-4">
           <div class="split-card preventive">
             <h4><i class="fas fa-calendar-check"></i> ${t.modalManagePrev}</h4>
@@ -345,7 +346,6 @@ function getModalContent(service, lang) {
           </div>
         </div>
         
-        <!-- YANG KAMI SUPPORT -->
         <div class="service-support mb-4">
           <h4><i class="fas fa-headset me-2"></i> ${t.modalManageSupported}</h4>
           <div class="support-grid">
@@ -360,7 +360,6 @@ function getModalContent(service, lang) {
           </div>
         </div>
         
-        <!-- KEUNGGULAN -->
         <div class="service-benefits">
           <h4><i class="fas fa-medal me-2"></i> ${t.modalManageBenefits}</h4>
           <ul>
@@ -375,12 +374,10 @@ function getModalContent(service, lang) {
     network: {
       title: t.modalNetworkTitle,
       content: `
-        <!-- DESKRIPSI -->
         <div class="service-description">
           <p class="service-desc-text">${t.modalNetworkDesc}</p>
         </div>
         
-        <!-- FITUR UTAMA & KEUNGGULAN -->
         <div class="row g-4 mb-4">
           <div class="col-md-6">
             <div class="split-card">
@@ -407,7 +404,6 @@ function getModalContent(service, lang) {
           </div>
         </div>
         
-        <!-- YANG KAMI SUPPORT -->
         <div class="service-support mb-4">
           <h4><i class="fas fa-box me-2"></i> ${t.modalNetworkProvided}</h4>
           <div class="support-grid">
@@ -422,7 +418,6 @@ function getModalContent(service, lang) {
           </div>
         </div>
         
-        <!-- KEUNGGULAN (SINGKAT) -->
         <div class="service-benefits">
           <h4><i class="fas fa-medal me-2"></i> Keunggulan Layanan</h4>
           <ul>
@@ -437,12 +432,10 @@ function getModalContent(service, lang) {
     security: {
       title: t.modalSecurityTitle,
       content: `
-        <!-- DESKRIPSI -->
         <div class="service-description">
           <p class="service-desc-text">${t.modalSecurityDesc}</p>
         </div>
         
-        <!-- LAPISAN KEAMANAN -->
         <div class="mb-4">
           <h4 class="mb-3"><i class="fas fa-layer-group me-2"></i> ${t.modalSecurityLayers}</h4>
           <div class="security-layers">
@@ -465,7 +458,6 @@ function getModalContent(service, lang) {
           </div>
         </div>
         
-        <!-- YANG KAMI SUPPORT -->
         <div class="service-support mb-4">
           <h4><i class="fas fa-shield-alt me-2"></i> ${t.modalSecurityServices}</h4>
           <div class="support-grid">
@@ -478,7 +470,6 @@ function getModalContent(service, lang) {
           </div>
         </div>
         
-        <!-- KEUNGGULAN -->
         <div class="service-benefits">
           <h4><i class="fas fa-medal me-2"></i> Keunggulan Keamanan</h4>
           <ul>
@@ -493,12 +484,10 @@ function getModalContent(service, lang) {
     website: {
       title: t.modalWebsiteTitle,
       content: `
-        <!-- DESKRIPSI -->
         <div class="service-description">
           <p class="service-desc-text">${t.modalWebsiteDesc}</p>
         </div>
         
-        <!-- JENIS WEBSITE & FITUR -->
         <div class="row g-4 mb-4">
           <div class="col-md-6">
             <div class="split-card">
@@ -526,7 +515,6 @@ function getModalContent(service, lang) {
           </div>
         </div>
         
-        <!-- YANG KAMI SUPPORT -->
         <div class="service-support mb-4">
           <h4><i class="fas fa-code me-2"></i> Teknologi Yang Kami Gunakan</h4>
           <div class="support-grid">
@@ -539,7 +527,6 @@ function getModalContent(service, lang) {
           </div>
         </div>
         
-        <!-- KEUNGGULAN -->
         <div class="service-benefits">
           <h4><i class="fas fa-medal me-2"></i> Keunggulan Website Kami</h4>
           <ul>
@@ -554,12 +541,10 @@ function getModalContent(service, lang) {
     iot: {
       title: t.modalIoTTitle,
       content: `
-        <!-- DESKRIPSI -->
         <div class="service-description">
           <p class="service-desc-text">${t.modalIoTDesc}</p>
         </div>
         
-        <!-- APLIKASI & KOMPONEN -->
         <div class="row g-4 mb-4">
           <div class="col-md-6">
             <div class="split-card">
@@ -587,7 +572,6 @@ function getModalContent(service, lang) {
           </div>
         </div>
         
-        <!-- YANG KAMI SUPPORT -->
         <div class="service-support mb-4">
           <h4><i class="fas fa-wifi me-2"></i> Konektivitas & Hardware</h4>
           <div class="support-grid">
@@ -600,7 +584,6 @@ function getModalContent(service, lang) {
           </div>
         </div>
         
-        <!-- KEUNGGULAN -->
         <div class="service-benefits">
           <h4><i class="fas fa-medal me-2"></i> Keunggulan IoT Kami</h4>
           <ul>
@@ -615,12 +598,10 @@ function getModalContent(service, lang) {
     procurement: {
       title: t.modalProcurementTitle,
       content: `
-        <!-- DESKRIPSI -->
         <div class="service-description">
           <p class="service-desc-text">${t.modalProcurementDesc}</p>
         </div>
         
-        <!-- KATEGORI & PROSES -->
         <div class="row g-4 mb-4">
           <div class="col-md-6">
             <div class="split-card">
@@ -647,7 +628,6 @@ function getModalContent(service, lang) {
           </div>
         </div>
         
-        <!-- BRAND YANG KAMI SUPPORT -->
         <div class="service-support mb-4">
           <h4><i class="fas fa-building me-2"></i> Brand Ternama</h4>
           <div class="support-grid">
@@ -662,7 +642,6 @@ function getModalContent(service, lang) {
           </div>
         </div>
         
-        <!-- KEUNGGULAN -->
         <div class="service-benefits">
           <h4><i class="fas fa-medal me-2"></i> ${t.modalProcurementBenefits}</h4>
           <ul>
@@ -716,7 +695,7 @@ function changeLanguage(lang) {
     }
   });
   
-  // Update selected language text di dropdown
+  // Update selected language text
   const selectedLangSpan = document.getElementById('selected-language');
   if (selectedLangSpan) {
     selectedLangSpan.textContent = lang === 'id' ? 'Indonesia' : 'English';
@@ -727,7 +706,6 @@ function changeLanguage(lang) {
     item.classList.remove('active');
     if (item.dataset.lang === lang) {
       item.classList.add('active');
-      // Update icon check
       const icon = item.querySelector('i');
       if (icon) icon.style.opacity = '1';
     } else {
@@ -753,6 +731,80 @@ function changeLanguage(lang) {
   }
 }
 
+// ==================== FUNGSI HANDLE FORM SUBMIT ====================
+async function handleFormSubmit(e) {
+  e.preventDefault();
+  
+  const form = e.target;
+  const formData = new FormData(form);
+  const submitBtn = document.getElementById('submitBtn');
+  const submitSpan = document.getElementById('contactSend');
+  const statusDiv = document.getElementById('formStatus');
+  
+  // Validasi form
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  
+  if (!name || !email || !message) {
+    statusDiv.className = 'alert alert-danger';
+    statusDiv.textContent = translations[currentLang].formRequired;
+    statusDiv.classList.remove('d-none');
+    
+    // Auto hide setelah 5 detik
+    setTimeout(() => {
+      statusDiv.classList.add('d-none');
+    }, 5000);
+    return;
+  }
+  
+  // Tampilkan loading
+  submitBtn.disabled = true;
+  submitSpan.textContent = translations[currentLang].formSending;
+  statusDiv.classList.add('d-none');
+  
+  try {
+    // Ganti dengan endpoint Formspree Anda
+    const response = await fetch('https://formspree.io/f/your-form-id', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    
+    if (response.ok) {
+      // Success
+      statusDiv.className = 'alert alert-success';
+      statusDiv.textContent = translations[currentLang].formSuccess;
+      statusDiv.classList.remove('d-none');
+      form.reset();
+      
+      // Auto hide setelah 5 detik
+      setTimeout(() => {
+        statusDiv.classList.add('d-none');
+      }, 5000);
+    } else {
+      // Error
+      throw new Error('Form submission failed');
+    }
+  } catch (error) {
+    // Error
+    statusDiv.className = 'alert alert-danger';
+    statusDiv.textContent = translations[currentLang].formError;
+    statusDiv.classList.remove('d-none');
+    
+    // Auto hide setelah 5 detik
+    setTimeout(() => {
+      statusDiv.classList.add('d-none');
+    }, 5000);
+  } finally {
+    // Kembalikan button ke normal
+    submitBtn.disabled = false;
+    submitSpan.textContent = translations[currentLang].contactSend;
+  }
+}
+
 // ==================== EVENT LISTENERS ====================
 
 // Language dropdown
@@ -774,28 +826,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Contact form
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    if (!name || !email || !message) {
-      alert(currentLang === 'id' ? 'Harap isi semua field yang wajib diisi' : 'Please fill in all required fields');
-      return;
-    }
-    
-    alert(currentLang === 'id' 
-      ? 'Terima kasih! Pesan Anda telah terkirim.' 
-      : 'Thank you! Your message has been sent.');
-    contactForm.reset();
-  });
-}
-
 // Help button
 const helpButton = document.getElementById('helpButton');
 if (helpButton) {
@@ -805,23 +835,6 @@ if (helpButton) {
       : 'Hello! How can we help you? Please contact us via WhatsApp.');
   });
 }
-
-// Service Modal - Open
-document.querySelectorAll('.service-link, .dropdown-item[data-service]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const service = link.getAttribute('data-service');
-    
-    if (service) {
-      const content = getModalContent(service, currentLang);
-      document.getElementById('serviceModalLabel').textContent = content.title;
-      document.getElementById('serviceModalBody').innerHTML = content.content;
-      
-      const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
-      modal.show();
-    }
-  });
-});
 
 // Active nav link
 window.addEventListener('scroll', () => {
@@ -846,8 +859,73 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
+// ==================== DOM CONTENT LOADED ====================
+document.addEventListener('DOMContentLoaded', function() {
+  // Inisialisasi AOS
+  AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 100
+  });
+
+  // Inisialisasi Bootstrap Carousel
+  var carousel = new bootstrap.Carousel(document.getElementById('projectsCarousel'), {
+    interval: 3000,
+    wrap: true,
+    pause: false
+  });
+
+  // Inisialisasi semua dropdown Bootstrap
+  var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+  var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+    return new bootstrap.Dropdown(dropdownToggleEl)
+  });
+
+  // Event listener untuk dropdown item (layanan)
+  document.querySelectorAll('.dropdown-item[data-service]').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Tutup dropdown setelah diklik
+      const dropdownToggle = document.querySelector('#servicesDropdown');
+      if (dropdownToggle) {
+        const dropdown = bootstrap.Dropdown.getInstance(dropdownToggle);
+        if (dropdown) {
+          dropdown.hide();
+        }
+      }
+      
+      // Buka modal service
+      const service = this.getAttribute('data-service');
+      if (service) {
+        const content = getModalContent(service, currentLang);
+        document.getElementById('serviceModalLabel').textContent = content.title;
+        document.getElementById('serviceModalBody').innerHTML = content.content;
+        
+        const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
+        modal.show();
+      }
+    });
+  });
+
+  // Event listener untuk link service di footer
+  document.querySelectorAll('.service-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const service = this.getAttribute('data-service');
+      
+      if (service) {
+        const content = getModalContent(service, currentLang);
+        document.getElementById('serviceModalLabel').textContent = content.title;
+        document.getElementById('serviceModalBody').innerHTML = content.content;
+        
+        const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
+        modal.show();
+      }
+    });
+  });
+
+  // Set bahasa awal
   changeLanguage('id');
   
   // Update copyright year
@@ -858,7 +936,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   // Tutup navbar mobile saat link diklik
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
   const navbarCollapse = document.querySelector('.navbar-collapse');
   
   navLinks.forEach(link => {
@@ -866,6 +944,25 @@ document.addEventListener('DOMContentLoaded', () => {
       if (navbarCollapse && navbarCollapse.classList.contains('show')) {
         navbarCollapse.classList.remove('show');
       }
+    });
+  });
+
+  // Handle form submit
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', handleFormSubmit);
+  }
+
+  // Tracking social media clicks
+  document.querySelectorAll('.social-icon').forEach(icon => {
+    icon.addEventListener('click', function(e) {
+      const platform = this.classList.contains('instagram') ? 'Instagram' :
+                      this.classList.contains('linkedin') ? 'LinkedIn' :
+                      this.classList.contains('gmail') ? 'Gmail' : 
+                      this.classList.contains('facebook') ? 'Facebook' : 'Social';
+      
+      console.log(`Social media clicked: ${platform}`);
+      // Anda bisa menambahkan Google Analytics di sini
     });
   });
 });
