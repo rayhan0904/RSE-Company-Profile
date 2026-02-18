@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>RSE Digital Solution - Solusi IT Profesional</title>
   
   <!-- Bootstrap 5 CSS -->
@@ -29,34 +29,34 @@
       <span class="brand-rse">RSE</span> <span class="brand-it">Digital</span> <span class="brand-solution">Solution</span>
     </a>
     
-    <!-- Hamburger Button untuk Mobile -->
+    <!-- Hamburger Button -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+        <li class="nav-item"><a class="nav-link" href="#home" id="navHome">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about" id="navAbout">Tentang</a></li>
         
         <!-- Services Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Layanan</a>
           <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-            <li><a class="dropdown-item" href="#" data-service="manage">Manage Service</a></li>
-            <li><a class="dropdown-item" href="#" data-service="network">Network Infrastructure</a></li>
-            <li><a class="dropdown-item" href="#" data-service="security">Security Infrastructure</a></li>
-            <li><a class="dropdown-item" href="#" data-service="website">Jasa Pembuatan Website</a></li>
-            <li><a class="dropdown-item" href="#" data-service="iot">IOT Solutions</a></li>
-            <li><a class="dropdown-item" href="#" data-service="procurement">Pengadaan Barang</a></li>
+            <li><a class="dropdown-item" href="services.html?service=manage" id="navManageService">Manage Service</a></li>
+            <li><a class="dropdown-item" href="services.html?service=network" id="navNetwork">Network Infrastructure</a></li>
+            <li><a class="dropdown-item" href="services.html?service=security" id="navSecurity">Security Infrastructure</a></li>
+            <li><a class="dropdown-item" href="services.html?service=website" id="navWebsite">Jasa Pembuatan Website</a></li>
+            <li><a class="dropdown-item" href="services.html?service=iot" id="navIot">IOT Solutions</a></li>
+            <li><a class="dropdown-item" href="services.html?service=procurement" id="navProcurement">Pengadaan Barang</a></li>
           </ul>
         </li>
         
-        <li class="nav-item"><a class="nav-link" href="#projects">Portofolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects" id="navProjects">Portofolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact" id="navContact">Kontak</a></li>
       </ul>
       
-      <!-- LANGUAGE DROPDOWN -->
+      <!-- Language Dropdown -->
       <div class="dropdown language-dropdown ms-3">
         <button class="btn btn-outline-light dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fas fa-globe me-1"></i> <span id="selected-language">Indonesia</span>
@@ -73,10 +73,8 @@
 <!-- HERO SECTION -->
 <section id="home" class="hero-section">
   <div class="container">
-    <div class="row align-items-center min-vh-100">
-      <div class="col-lg-7" data-aos="fade-right">
-        <div class="hero-badge">
-        </div>
+    <div class="row align-items-center">
+      <div class="col-lg-7 order-2 order-lg-1" data-aos="fade-right">
         <h1 class="hero-title" id="heroTitle">Reliable IT Solutions & Professional Services</h1>
         <p class="hero-subtitle" id="heroSubtitle">Memberdayakan Bisnis Anda dengan Teknologi yang Aman, Skalabel & Cerdas</p>
         
@@ -97,10 +95,10 @@
         
         <div class="hero-buttons">
           <a href="#contact" class="btn btn-primary btn-lg"><span id="heroConsultation">Konsultasi Gratis</span> <i class="fas fa-arrow-right ms-2"></i></a>
-          <a href="#" class="btn btn-outline-orange btn-lg"><span id="heroServices">Layanan Kami</span></a>
+          <a href="services.html" class="btn btn-outline-orange btn-lg"><span id="heroServices">Layanan Kami</span></a>
         </div>
       </div>
-      <div class="col-lg-5" data-aos="fade-left">
+      <div class="col-lg-5 order-1 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
         <div class="hero-image">
           <div class="floating-card card-1">
             <i class="fas fa-shield-alt"></i>
@@ -130,7 +128,7 @@
       <div class="title-line"></div>
     </div>
     
-    <div class="row g-5">
+    <div class="row g-4 g-lg-5">
       <div class="col-lg-6" data-aos="fade-right">
         <div class="about-content">
           <p class="about-text" id="aboutDescription">Kami adalah tim yang terdiri dari ahli strategi teknologi, arsitek jaringan, dan pakar keamanan siber yang berdedikasi untuk mempersiapkan masa depan perusahaan Anda. Dengan pengalaman lebih dari 12 tahun dalam mendesain, menerapkan, dan mengelola infrastruktur IT yang tangguh untuk mendorong pertumbuhan bisnis.</p>
@@ -193,24 +191,6 @@
   </div>
 </section>
 
-<!-- SERVICE MODAL -->
-<div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header bg-primary text-white" style="background: linear-gradient(135deg, #0A1F44, #1a2f5a) !important;">
-        <h5 class="modal-title fw-bold" id="serviceModalLabel">Manage Service</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-4" id="serviceModalBody">
-        <!-- Konten service akan diisi oleh JavaScript -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- PROJECTS SECTION -->
 <section id="projects" class="projects-section">
   <div class="container">
@@ -220,47 +200,47 @@
       <div class="title-line"></div>
     </div>
     
-    <!-- Auto Playing Carousel -->
+    <!-- Carousel -->
     <div id="projectsCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="4"></button>
       </div>
       
       <div class="carousel-inner rounded-4">
         <div class="carousel-item active">
-          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Data Center" style="height: 500px; object-fit: cover;">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Data Center">
           <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
             <h3 class="text-white">Data Center Migration</h3>
             <p class="text-white">Migrasi data center perusahaan finansial ke cloud hybrid dengan zero downtime</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Network Security" style="height: 500px; object-fit: cover;">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Network Security">
           <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
             <h3 class="text-white">Security System</h3>
             <p class="text-white">Instalasi firewall dan keamanan jaringan untuk perusahaan manufaktur</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Website" style="height: 500px; object-fit: cover;">
+          <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Website">
           <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
             <h3 class="text-white">Company Website</h3>
             <p class="text-white">Pembuatan website perusahaan dengan CMS dan integrasi CRM</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="IoT" style="height: 500px; object-fit: cover;">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="IoT">
           <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
             <h3 class="text-white">Smart Building IoT</h3>
             <p class="text-white">Sistem otomatisasi gedung berbasis IoT untuk efisiensi energi</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="SD-WAN" style="height: 500px; object-fit: cover;">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="SD-WAN">
           <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
             <h3 class="text-white">SD-WAN Implementation</h3>
             <p class="text-white">Implementasi jaringan SD-WAN untuk perusahaan retail dengan 50 cabang</p>
@@ -280,12 +260,12 @@
     
     <!-- Testimonials -->
     <h3 class="text-center mb-4 mt-5" id="projectsTestimonials">Apa Kata Klien Kami</h3>
-    <div class="row g-4">
+    <div class="row g-3 g-md-4">
       <div class="col-md-4" data-aos="fade-up">
         <div class="testimonial-card">
           <div class="testimonial-rating">★★★★★</div>
-          <p class="testimonial-text">"Tim RSE sangat profesional dan responsif. Implementasi jaringan berjalan lancar."</p>
-          <div class="testimonial-author">
+          <p class="testimonial-text" id="testimonial1Text">"Tim RSE sangat profesional dan responsif. Implementasi jaringan berjalan lancar."</p>
+          <div class="testimonial-author" id="testimonial1Author">
             <strong>Andi Wijaya</strong> - PT Maju Jaya
           </div>
         </div>
@@ -294,8 +274,8 @@
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
         <div class="testimonial-card">
           <div class="testimonial-rating">★★★★★</div>
-          <p class="testimonial-text">"Layanan maintenance sangat membantu. Respon cepat saat ada masalah."</p>
-          <div class="testimonial-author">
+          <p class="testimonial-text" id="testimonial2Text">"Layanan maintenance sangat membantu. Respon cepat saat ada masalah."</p>
+          <div class="testimonial-author" id="testimonial2Author">
             <strong>Budi Santoso</strong> - CV Karya Mandiri
           </div>
         </div>
@@ -304,8 +284,8 @@
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
         <div class="testimonial-card">
           <div class="testimonial-rating">★★★★★</div>
-          <p class="testimonial-text">"Website yang dibuat bagus dan sesuai keinginan. Recommended!"</p>
-          <div class="testimonial-author">
+          <p class="testimonial-text" id="testimonial3Text">"Website yang dibuat bagus dan sesuai keinginan. Recommended!"</p>
+          <div class="testimonial-author" id="testimonial3Author">
             <strong>Citra Dewi</strong> - Toko Online
           </div>
         </div>
@@ -324,15 +304,13 @@
     </div>
     
     <div class="row g-4">
-      <!-- Kolom Form -->
+      <!-- Contact Form -->
       <div class="col-lg-7" data-aos="fade-right">
-        <div class="contact-form-wrapper p-4 bg-white rounded-4 shadow-sm h-100">
+        <div class="contact-form-wrapper p-3 p-md-4 bg-white rounded-4 shadow-sm">
           <h5 class="mb-3 fw-bold" style="color: var(--deep-blue);">Kirim Pesan</h5>
           
-          <!-- FORM CONTACT DENGAN EMAIL -->
           <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
             <input type="hidden" name="_subject" value="Pesan Baru dari Website RSE Digital Solution">
-            <input type="hidden" name="_template" value="table">
             
             <div class="row g-3">
               <div class="col-md-6">
@@ -381,50 +359,50 @@
         </div>
       </div>
       
-      <!-- Kolom Info -->
+      <!-- Contact Info -->
       <div class="col-lg-5" data-aos="fade-left">
-        <div class="contact-info-wrapper p-4 rounded-4 shadow-sm h-100" style="background: linear-gradient(135deg, #0A1F44, #1a2f5a);">
+        <div class="contact-info-wrapper p-3 p-md-4 rounded-4 shadow-sm h-100">
           <h5 class="mb-3 fw-bold text-white">Informasi Kontak</h5>
           
-          <div class="d-flex align-items-center mb-3">
-            <div class="bg-white bg-opacity-10 rounded-3 p-2 me-3" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+          <div class="contact-info-item">
+            <div class="info-icon">
               <i class="fas fa-phone-alt text-white"></i>
             </div>
             <div>
-              <small class="text-white-50 text-uppercase" style="font-size: 0.7rem;" id="contactPhoneLabel">Telepon</small>
-              <div class="text-white" style="font-size: 0.95rem;"><a href="tel:+628123456789" class="text-white text-decoration-none">+62 812 3456 789</a></div>
+              <small class="text-white-50 text-uppercase" id="contactPhoneLabel">Telepon</small>
+              <div class="text-white"><a href="tel:+628123456789" class="text-white text-decoration-none">+62 812 3456 789</a></div>
             </div>
           </div>
           
-          <div class="d-flex align-items-center mb-3">
-            <div class="bg-white bg-opacity-10 rounded-3 p-2 me-3" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+          <div class="contact-info-item">
+            <div class="info-icon">
               <i class="fas fa-envelope text-white"></i>
             </div>
             <div>
-              <small class="text-white-50 text-uppercase" style="font-size: 0.7rem;" id="contactEmailLabel">Email</small>
-              <div class="text-white" style="font-size: 0.95rem;"><a href="mailto:info@rse-it.com" class="text-white text-decoration-none">info@rse-it.com</a></div>
+              <small class="text-white-50 text-uppercase" id="contactEmailLabel">Email</small>
+              <div class="text-white"><a href="mailto:info@rse-it.com" class="text-white text-decoration-none">info@rse-it.com</a></div>
             </div>
           </div>
           
-          <div class="d-flex align-items-center mb-3">
-            <div class="bg-white bg-opacity-10 rounded-3 p-2 me-3" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+          <div class="contact-info-item">
+            <div class="info-icon">
               <i class="fab fa-whatsapp text-white"></i>
             </div>
             <div>
-              <small class="text-white-50 text-uppercase" style="font-size: 0.7rem;">WhatsApp</small>
-              <div class="text-white" style="font-size: 0.95rem;">
+              <small class="text-white-50 text-uppercase">WhatsApp</small>
+              <div class="text-white">
                 <a href="https://wa.me/628123456789?text=Halo%20RSE%20Digital%20Solution%2C%20saya%20ingin%20berkonsultasi%20tentang%20layanan%20Anda." target="_blank" class="text-white text-decoration-none">+62 812 3456 789</a>
               </div>
             </div>
           </div>
           
-          <div class="d-flex align-items-center">
-            <div class="bg-white bg-opacity-10 rounded-3 p-2 me-3" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+          <div class="contact-info-item">
+            <div class="info-icon">
               <i class="fas fa-map-marker-alt text-white"></i>
             </div>
             <div>
-              <small class="text-white-50 text-uppercase" style="font-size: 0.7rem;" id="contactOffice">Kantor</small>
-              <div class="text-white" style="font-size: 0.95rem;">Jakarta, Indonesia</div>
+              <small class="text-white-50 text-uppercase" id="contactOffice">Kantor</small>
+              <div class="text-white">Jakarta, Indonesia</div>
             </div>
           </div>
         </div>
@@ -436,39 +414,32 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-6 mb-4">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
         <div class="footer-logo">
           <h4 class="fw-bold">RSE <span class="text-warning">Digital</span> Solution</h4>
           <p class="tagline text-info small" id="footerTagline">Aman · Cepat · Terpercaya</p>
         </div>
         <p class="company-desc small text-white-50" id="footerDescription">Solusi IT terpercaya untuk infrastruktur, keamanan, dan pengadaan barang.</p>
         
-        <!-- SOCIAL MEDIA ICONS MENARIK -->
-        <div class="footer-social d-flex gap-2">
-          <!-- Instagram -->
+        <!-- Social Media Icons -->
+        <div class="footer-social">
           <a href="https://instagram.com/rse.digital" target="_blank" class="social-icon instagram" title="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
-          
-          <!-- LinkedIn -->
           <a href="https://linkedin.com/company/rse-digital" target="_blank" class="social-icon linkedin" title="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          
-          <!-- Gmail -->
           <a href="mailto:info@rse-it.com" class="social-icon gmail" title="Gmail">
             <i class="fas fa-envelope"></i>
           </a>
-          
-          <!-- Facebook -->
           <a href="https://facebook.com/rse.digital" target="_blank" class="social-icon facebook" title="Facebook">
             <i class="fab fa-facebook-f"></i>
           </a>
         </div>
       </div>
       
-      <div class="col-lg-2 col-md-6 mb-4">
+      <div class="col-lg-2 col-md-6">
         <h5 class="fw-bold fs-6 mb-3" id="footerQuickLinks">Tautan Cepat</h5>
         <ul class="footer-links list-unstyled">
           <li class="mb-2"><a href="#home" class="text-white-50 text-decoration-none small" id="footerHome">Beranda</a></li>
@@ -478,42 +449,42 @@
         </ul>
       </div>
       
-      <div class="col-lg-3 col-md-6 mb-4">
+      <div class="col-lg-3 col-md-6">
         <h5 class="fw-bold fs-6 mb-3" id="footerServices">Layanan</h5>
         <ul class="footer-links list-unstyled">
-          <li class="mb-2"><a href="#" class="service-link text-white-50 text-decoration-none small" data-service="manage" id="footerManageService">Manage Service</a></li>
-          <li class="mb-2"><a href="#" class="service-link text-white-50 text-decoration-none small" data-service="network" id="footerNetwork">Network Infrastructure</a></li>
-          <li class="mb-2"><a href="#" class="service-link text-white-50 text-decoration-none small" data-service="security" id="footerSecurity">Security Infrastructure</a></li>
-          <li class="mb-2"><a href="#" class="service-link text-white-50 text-decoration-none small" data-service="website" id="footerWebsite">Jasa Pembuatan Website</a></li>
-          <li class="mb-2"><a href="#" class="service-link text-white-50 text-decoration-none small" data-service="iot" id="footerIot">IOT Solutions</a></li>
-          <li class="mb-2"><a href="#" class="service-link text-white-50 text-decoration-none small" data-service="procurement" id="footerProcurement">Pengadaan Barang</a></li>
+          <li class="mb-2"><a href="services.html?service=manage" class="text-white-50 text-decoration-none small" id="footerManageService">Manage Service</a></li>
+          <li class="mb-2"><a href="services.html?service=network" class="text-white-50 text-decoration-none small" id="footerNetwork">Network Infrastructure</a></li>
+          <li class="mb-2"><a href="services.html?service=security" class="text-white-50 text-decoration-none small" id="footerSecurity">Security Infrastructure</a></li>
+          <li class="mb-2"><a href="services.html?service=website" class="text-white-50 text-decoration-none small" id="footerWebsite">Jasa Pembuatan Website</a></li>
+          <li class="mb-2"><a href="services.html?service=iot" class="text-white-50 text-decoration-none small" id="footerIot">IOT Solutions</a></li>
+          <li class="mb-2"><a href="services.html?service=procurement" class="text-white-50 text-decoration-none small" id="footerProcurement">Pengadaan Barang</a></li>
         </ul>
       </div>
       
-      <div class="col-lg-3 col-md-6 mb-4">
+      <div class="col-lg-3 col-md-6">
         <h5 class="fw-bold fs-6 mb-3" id="footerContactTitle">Kontak</h5>
         <ul class="footer-contact list-unstyled">
-          <li class="mb-2 d-flex align-items-center gap-2">
-            <i class="fas fa-phone-alt text-warning small" style="width: 16px;"></i>
+          <li class="mb-2">
+            <i class="fas fa-phone-alt text-warning small"></i>
             <a href="tel:+628123456789" class="text-white-50 text-decoration-none small">+62 812 3456 789</a>
           </li>
-          <li class="mb-2 d-flex align-items-center gap-2">
-            <i class="fas fa-envelope text-warning small" style="width: 16px;"></i>
+          <li class="mb-2">
+            <i class="fas fa-envelope text-warning small"></i>
             <a href="mailto:info@rse-it.com" class="text-white-50 text-decoration-none small">info@rse-it.com</a>
           </li>
-          <li class="mb-2 d-flex align-items-center gap-2">
-            <i class="fas fa-map-marker-alt text-warning small" style="width: 16px;"></i>
+          <li class="mb-2">
+            <i class="fas fa-map-marker-alt text-warning small"></i>
             <span class="text-white-50 small">Jakarta, Indonesia</span>
           </li>
-          <li class="mb-2 d-flex align-items-center gap-2">
-            <i class="fas fa-clock text-warning small" style="width: 16px;"></i>
+          <li class="mb-2">
+            <i class="fas fa-clock text-warning small"></i>
             <span class="text-white-50 small" id="footerHours">Senin - Jumat, 09:00 - 18:00</span>
           </li>
         </ul>
       </div>
     </div>
     
-    <div class="footer-bottom mt-3 pt-3 border-top border-white-10">
+    <div class="footer-bottom">
       <div class="row">
         <div class="col-12 text-center">
           <p class="copyright small text-white-50 mb-0"><span id="footerCopyright">© 2025 RSE Digital Solution. Hak Cipta Dilindungi.</span></p>

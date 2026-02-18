@@ -1,8 +1,9 @@
 // Initialize AOS
 AOS.init({
-  duration: 1000,
+  duration: 800,
   once: true,
-  offset: 100
+  offset: 50,
+  disable: 'mobile'
 });
 
 // ==================== TRANSLATIONS ====================
@@ -22,7 +23,6 @@ const translations = {
     navContact: 'Kontak',
     
     // Hero
-    heroTrusted: 'Terpercaya sejak 2024',
     heroTitle: 'Reliable IT Solutions & Professional Services',
     heroSubtitle: 'Memberdayakan Bisnis Anda dengan Teknologi yang Aman, Skalabel & Cerdas',
     heroYears: 'Tahun Pengalaman',
@@ -57,6 +57,14 @@ const translations = {
     projectsTitle: 'Proyek Kami',
     projectsTestimonials: 'Apa Kata Klien Kami',
     
+    // Testimonials
+    testimonial1Text: 'Tim RSE sangat profesional dan responsif. Implementasi jaringan berjalan lancar.',
+    testimonial1Author: 'Andi Wijaya - PT Maju Jaya',
+    testimonial2Text: 'Layanan maintenance sangat membantu. Respon cepat saat ada masalah.',
+    testimonial2Author: 'Budi Santoso - CV Karya Mandiri',
+    testimonial3Text: 'Website yang dibuat bagus dan sesuai keinginan. Recommended!',
+    testimonial3Author: 'Citra Dewi - Toko Online',
+    
     // Contact
     contactSubtitle: 'Hubungi Kami',
     contactTitle: 'Let\'s Connect',
@@ -72,8 +80,8 @@ const translations = {
     
     // Form Status
     formSending: 'Mengirim...',
-    formSuccess: 'Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.',
-    formError: 'Maaf, terjadi kesalahan. Silakan coba lagi atau hubungi kami langsung via WhatsApp.',
+    formSuccess: 'Terima kasih! Pesan Anda telah terkirim.',
+    formError: 'Maaf, terjadi kesalahan. Silakan coba lagi.',
     formRequired: 'Harap isi semua field yang wajib diisi',
     
     // Footer
@@ -95,66 +103,53 @@ const translations = {
     footerHours: 'Senin - Jumat, 09:00 - 18:00',
     footerCopyright: '© 2025 RSE Digital Solution. Hak Cipta Dilindungi.',
     
-    // Modal Service Translations
-    modalManageTitle: 'Manage Service',
-    modalManageDesc: 'Layanan pengelolaan IT menyeluruh yang mencakup pemeliharaan preventif dan korektif untuk memastikan infrastruktur teknologi Anda selalu dalam kondisi optimal.',
-    modalManagePrev: 'Preventive Maintenance',
-    modalManageCorr: 'Corrective Maintenance',
-    modalManagePrev1: 'Pemeriksaan rutin hardware & software',
-    modalManagePrev2: 'Update security patch & antivirus',
-    modalManagePrev3: 'Backup data terjadwal',
-    modalManagePrev4: 'Monitoring performa 24/7',
-    modalManagePrev5: 'Audit keamanan berkala',
-    modalManageCorr1: 'Response darurat < 1 jam',
-    modalManageCorr2: 'Perbaikan hardware/software',
-    modalManageCorr3: 'Data recovery',
-    modalManageCorr4: 'Root cause analysis',
-    modalManageCorr5: 'Reporting & rekomendasi',
-    modalManageSupported: 'Yang Kami Dukung:',
-    modalManageBenefits: 'Keuntungan:',
-    modalManageBenefit1: 'Minimalkan downtime hingga 99.9%',
-    modalManageBenefit2: 'Biaya operasional lebih terprediksi',
-    modalManageBenefit3: 'Fokus pada bisnis inti',
+    // Service Page
+    serviceDetailSubtitle: 'Layanan Kami',
+    serviceDetailTitle: 'Layanan Profesional',
+    ctaTitle: 'Siap Meningkatkan Infrastruktur IT Anda?',
+    ctaDesc: 'Hubungi kami sekarang untuk konsultasi gratis dan penawaran terbaik',
+    ctaContact: 'Hubungi Kami',
+    ctaWA: 'WhatsApp',
     
-    modalNetworkTitle: 'Network Infrastructure',
-    modalNetworkDesc: 'Kami merancang, membangun, dan mengelola infrastruktur jaringan yang handal, scalable, dan aman untuk mendukung konektivitas bisnis Anda dengan performa tinggi.',
-    modalNetworkFeatures: 'Fitur Utama',
-    modalNetworkFeature1: 'Desain jaringan enterprise-grade',
-    modalNetworkFeature2: 'Redundancy & high availability',
-    modalNetworkFeature3: 'Quality of Service (QoS)',
-    modalNetworkFeature4: 'Network segmentation',
-    modalNetworkFeature5: 'Monitoring & analytics real-time',
-    modalNetworkAdvantages: 'Keunggulan',
-    modalNetworkAdv1: 'Skalabilitas tinggi',
-    modalNetworkAdv2: 'Keamanan berlapis',
-    modalNetworkAdv3: 'Ketersediaan 99.9%',
-    modalNetworkAdv4: 'Manajemen terpusat',
-    modalNetworkProvided: 'Yang Kami Sediakan:',
+    // Service Menu
+    serviceMenuTitle: 'Daftar Layanan',
+    serviceMenuManage: 'Manage Service',
+    serviceMenuNetwork: 'Network Infrastructure',
+    serviceMenuSecurity: 'Security Infrastructure',
+    serviceMenuWebsite: 'Jasa Pembuatan Website',
+    serviceMenuIot: 'IOT Solutions',
+    serviceMenuProcurement: 'Pengadaan Barang',
+    serviceMenuHelp: 'Butuh Bantuan?',
+    serviceMenuHelpDesc: 'Konsultasi gratis dengan tim kami',
     
-    modalSecurityTitle: 'Security Infrastructure',
-    modalSecurityDesc: 'Melindungi aset digital dan infrastruktur kritis perusahaan Anda dengan pendekatan keamanan berlapis yang mencakup pencegahan, deteksi, dan respons terhadap ancaman siber.',
-    modalSecurityLayers: 'Lapisan Keamanan',
-    modalSecurityLayer1: 'Cegah',
-    modalSecurityLayer2: 'Deteksi',
-    modalSecurityLayer3: 'Respon',
-    modalSecurityLayer4: 'Pulihkan',
-    modalSecurityServices: 'Layanan Keamanan',
+    // Service Descriptions
+    serviceManageDesc: 'Layanan pengelolaan IT menyeluruh yang mencakup pemeliharaan preventif dan korektif untuk memastikan infrastruktur teknologi Anda selalu dalam kondisi optimal.',
+    serviceNetworkDesc: 'Kami merancang, membangun, dan mengelola infrastruktur jaringan yang handal, scalable, dan aman untuk mendukung konektivitas bisnis Anda dengan performa tinggi.',
+    serviceSecurityDesc: 'Melindungi aset digital dan infrastruktur kritis perusahaan Anda dengan pendekatan keamanan berlapis yang mencakup pencegahan, deteksi, dan respons terhadap ancaman siber.',
+    serviceWebsiteDesc: 'Kami membantu Anda membangun website profesional yang responsif, cepat, dan SEO-friendly untuk meningkatkan visibilitas bisnis Anda di dunia digital.',
+    serviceIoTDesc: 'Menghubungkan perangkat fisik ke internet untuk mengumpulkan data, mengotomatisasi proses, dan memberikan insight real-time yang membantu pengambilan keputusan bisnis yang lebih cerdas.',
+    serviceProcurementDesc: 'Layanan pengadaan perangkat keras, perangkat lunak, dan perlengkapan IT dengan harga kompetitif dan garansi resmi untuk mendukung kebutuhan operasional bisnis Anda.',
     
-    modalWebsiteTitle: 'Website Development',
-    modalWebsiteDesc: 'Kami membantu Anda membangun website profesional yang responsif, cepat, dan SEO-friendly untuk meningkatkan visibilitas bisnis Anda di dunia digital.',
-    modalWebsiteTypes: 'Jenis Website',
-    modalWebsiteFeatures: 'Fitur Yang Kami Tawarkan',
+    // Feature Titles
+    featurePreventive: 'Preventive Maintenance',
+    featureCorrective: 'Corrective Maintenance',
+    featureMainFeatures: 'Fitur Utama',
+    featureAdvantages: 'Keunggulan',
+    featureSecurityLayers: 'Lapisan Keamanan',
+    featureSecurityServices: 'Layanan Keamanan',
+    featureWebsiteTypes: 'Jenis Website',
+    featureWebsiteFeatures: 'Fitur Yang Kami Tawarkan',
+    featureIoTApps: 'Aplikasi IoT',
+    featureIoTComponents: 'Komponen IoT',
+    featureProductCategories: 'Kategori Produk',
+    featureProcess: 'Proses Pengadaan',
     
-    modalIoTTitle: 'IoT Solutions',
-    modalIoTDesc: 'Menghubungkan perangkat fisik ke internet untuk mengumpulkan data, mengotomatisasi proses, dan memberikan insight real-time yang membantu pengambilan keputusan bisnis yang lebih cerdas.',
-    modalIoTApplications: 'Aplikasi IoT',
-    modalIoTComponents: 'Komponen IoT',
+    // Support Titles
+    supportTitle: 'Teknologi & Brand Yang Kami Dukung',
+    benefitsTitle: 'Keuntungan Layanan',
     
-    modalProcurementTitle: 'IT Procurement',
-    modalProcurementDesc: 'Layanan pengadaan perangkat keras, perangkat lunak, dan perlengkapan IT dengan harga kompetitif dan garansi resmi untuk mendukung kebutuhan operasional bisnis Anda.',
-    modalProcurementCategories: 'Kategori Produk',
-    modalProcurementProcess: 'Proses Pengadaan',
-    modalProcurementBenefits: 'Keuntungan'
+    // Common
+    and: 'dan'
   },
   
   en: {
@@ -172,7 +167,6 @@ const translations = {
     navContact: 'Contact',
     
     // Hero
-    heroTrusted: 'Trusted since 2024',
     heroTitle: 'Reliable IT Solutions & Professional Services',
     heroSubtitle: 'Empowering Your Business with Secure, Scalable & Smart Technology',
     heroYears: 'Years Experience',
@@ -207,6 +201,14 @@ const translations = {
     projectsTitle: 'Our Projects',
     projectsTestimonials: 'What Our Clients Say',
     
+    // Testimonials
+    testimonial1Text: 'RSE team is very professional and responsive. Network implementation went smoothly.',
+    testimonial1Author: 'Andi Wijaya - PT Maju Jaya',
+    testimonial2Text: 'Maintenance service is very helpful. Fast response when issues arise.',
+    testimonial2Author: 'Budi Santoso - CV Karya Mandiri',
+    testimonial3Text: 'The website is well-built and matches our wishes. Recommended!',
+    testimonial3Author: 'Citra Dewi - Online Store',
+    
     // Contact
     contactSubtitle: 'Contact Us',
     contactTitle: 'Let\'s Connect',
@@ -222,8 +224,8 @@ const translations = {
     
     // Form Status
     formSending: 'Sending...',
-    formSuccess: 'Thank you! Your message has been sent. We will contact you soon.',
-    formError: 'Sorry, an error occurred. Please try again or contact us via WhatsApp.',
+    formSuccess: 'Thank you! Your message has been sent.',
+    formError: 'Sorry, an error occurred. Please try again.',
     formRequired: 'Please fill in all required fields',
     
     // Footer
@@ -245,490 +247,470 @@ const translations = {
     footerHours: 'Monday - Friday, 09:00 - 18:00',
     footerCopyright: '© 2025 RSE Digital Solution. All rights reserved.',
     
-    // Modal Service Translations
-    modalManageTitle: 'Manage Service',
-    modalManageDesc: 'Comprehensive IT management service covering preventive and corrective maintenance to ensure your technology infrastructure is always in optimal condition.',
-    modalManagePrev: 'Preventive Maintenance',
-    modalManageCorr: 'Corrective Maintenance',
-    modalManagePrev1: 'Regular hardware & software checks',
-    modalManagePrev2: 'Security patch & antivirus updates',
-    modalManagePrev3: 'Scheduled data backup',
-    modalManagePrev4: '24/7 performance monitoring',
-    modalManagePrev5: 'Periodic security audit',
-    modalManageCorr1: 'Emergency response < 1 hour',
-    modalManageCorr2: 'Hardware/software repair',
-    modalManageCorr3: 'Data recovery',
-    modalManageCorr4: 'Root cause analysis',
-    modalManageCorr5: 'Reporting & recommendations',
-    modalManageSupported: 'We Support:',
-    modalManageBenefits: 'Benefits:',
-    modalManageBenefit1: 'Minimize downtime up to 99.9%',
-    modalManageBenefit2: 'More predictable operational costs',
-    modalManageBenefit3: 'Focus on core business',
+    // Service Page
+    serviceDetailSubtitle: 'Our Services',
+    serviceDetailTitle: 'Professional Services',
+    ctaTitle: 'Ready to Upgrade Your IT Infrastructure?',
+    ctaDesc: 'Contact us now for free consultation and best offers',
+    ctaContact: 'Contact Us',
+    ctaWA: 'WhatsApp',
     
-    modalNetworkTitle: 'Network Infrastructure',
-    modalNetworkDesc: 'We design, build, and manage reliable, scalable, and secure network infrastructure to support your business connectivity with high performance.',
-    modalNetworkFeatures: 'Key Features',
-    modalNetworkFeature1: 'Enterprise-grade network design',
-    modalNetworkFeature2: 'Redundancy & high availability',
-    modalNetworkFeature3: 'Quality of Service (QoS)',
-    modalNetworkFeature4: 'Network segmentation',
-    modalNetworkFeature5: 'Real-time monitoring & analytics',
-    modalNetworkAdvantages: 'Advantages',
-    modalNetworkAdv1: 'High scalability',
-    modalNetworkAdv2: 'Layered security',
-    modalNetworkAdv3: '99.9% availability',
-    modalNetworkAdv4: 'Centralized management',
-    modalNetworkProvided: 'We Provide:',
+    // Service Menu
+    serviceMenuTitle: 'Services List',
+    serviceMenuManage: 'Manage Service',
+    serviceMenuNetwork: 'Network Infrastructure',
+    serviceMenuSecurity: 'Security Infrastructure',
+    serviceMenuWebsite: 'Website Development',
+    serviceMenuIot: 'IOT Solutions',
+    serviceMenuProcurement: 'IT Procurement',
+    serviceMenuHelp: 'Need Help?',
+    serviceMenuHelpDesc: 'Free consultation with our team',
     
-    modalSecurityTitle: 'Security Infrastructure',
-    modalSecurityDesc: 'Protect your digital assets and critical infrastructure with a layered security approach covering prevention, detection, and response to cyber threats.',
-    modalSecurityLayers: 'Security Layers',
-    modalSecurityLayer1: 'Prevent',
-    modalSecurityLayer2: 'Detect',
-    modalSecurityLayer3: 'Respond',
-    modalSecurityLayer4: 'Recover',
-    modalSecurityServices: 'Security Services',
+    // Service Descriptions
+    serviceManageDesc: 'Comprehensive IT management service covering preventive and corrective maintenance to ensure your technology infrastructure is always in optimal condition.',
+    serviceNetworkDesc: 'We design, build, and manage reliable, scalable, and secure network infrastructure to support your business connectivity with high performance.',
+    serviceSecurityDesc: 'Protect your digital assets and critical infrastructure with a layered security approach covering prevention, detection, and response to cyber threats.',
+    serviceWebsiteDesc: 'We help you build professional, responsive, fast, and SEO-friendly websites to increase your business visibility in the digital world.',
+    serviceIoTDesc: 'Connect physical devices to the internet to collect data, automate processes, and provide real-time insights for smarter business decisions.',
+    serviceProcurementDesc: 'Hardware, software, and IT equipment procurement services with competitive prices and official warranty to support your business operations.',
     
-    modalWebsiteTitle: 'Website Development',
-    modalWebsiteDesc: 'We help you build professional, responsive, fast, and SEO-friendly websites to increase your business visibility in the digital world.',
-    modalWebsiteTypes: 'Website Types',
-    modalWebsiteFeatures: 'Features We Offer',
+    // Feature Titles
+    featurePreventive: 'Preventive Maintenance',
+    featureCorrective: 'Corrective Maintenance',
+    featureMainFeatures: 'Main Features',
+    featureAdvantages: 'Advantages',
+    featureSecurityLayers: 'Security Layers',
+    featureSecurityServices: 'Security Services',
+    featureWebsiteTypes: 'Website Types',
+    featureWebsiteFeatures: 'Features We Offer',
+    featureIoTApps: 'IoT Applications',
+    featureIoTComponents: 'IoT Components',
+    featureProductCategories: 'Product Categories',
+    featureProcess: 'Procurement Process',
     
-    modalIoTTitle: 'IoT Solutions',
-    modalIoTDesc: 'Connect physical devices to the internet to collect data, automate processes, and provide real-time insights for smarter business decisions.',
-    modalIoTApplications: 'IoT Applications',
-    modalIoTComponents: 'IoT Components',
+    // Support Titles
+    supportTitle: 'Technologies & Brands We Support',
+    benefitsTitle: 'Service Benefits',
     
-    modalProcurementTitle: 'IT Procurement',
-    modalProcurementDesc: 'Hardware, software, and IT equipment procurement services with competitive prices and official warranty to support your business operations.',
-    modalProcurementCategories: 'Product Categories',
-    modalProcurementProcess: 'Procurement Process',
-    modalProcurementBenefits: 'Benefits'
+    // Common
+    and: 'and'
+  }
+};
+
+// ==================== SERVICE FEATURES ====================
+const serviceFeatures = {
+  manage: {
+    preventive: [
+      'Regular hardware & software checks',
+      'Security patch & antivirus updates',
+      'Scheduled data backup',
+      '24/7 performance monitoring',
+      'Periodic security audit'
+    ],
+    corrective: [
+      'Emergency response < 1 hour',
+      'Hardware/software repair',
+      'Data recovery',
+      'Root cause analysis',
+      'Reporting & recommendations'
+    ],
+    support: ['Server', 'Network', 'Database', 'Workstation', 'Printer', 'Cloud', 'Security', 'Mobile Device'],
+    benefits: [
+      'Minimize downtime up to 99.9%',
+      'More predictable operational costs',
+      'Focus on core business',
+      '24/7 professional support team'
+    ]
+  },
+  
+  network: {
+    mainFeatures: [
+      'Enterprise-grade network design',
+      'Redundancy & high availability',
+      'Quality of Service (QoS)',
+      'Network segmentation',
+      'Real-time monitoring & analytics'
+    ],
+    advantages: [
+      'High scalability',
+      'Layered security',
+      '99.9% availability',
+      'Centralized management'
+    ],
+    support: ['LAN/WAN', 'Wireless', 'Firewall', 'Load Balancer', 'VPN', 'SD-WAN', 'CCTV Network', 'Fiber Optic'],
+    benefits: [
+      'Design according to business needs',
+      'High scalability',
+      '24/7 monitoring',
+      'Certified engineer team'
+    ]
+  },
+  
+  security: {
+    layers: [
+      'Prevent - Firewall & Antivirus',
+      'Detect - IDS/IPS & Monitoring',
+      'Respond - Incident Response',
+      'Recover - Backup & Recovery'
+    ],
+    services: [
+      'Firewall Management',
+      'Endpoint Protection',
+      'Vulnerability Assessment',
+      'DDoS Protection'
+    ],
+    support: ['Firewall', 'Antivirus', 'Endpoint', 'Monitoring', 'VA Scanner', 'DDoS', 'Encryption', 'IAM'],
+    benefits: [
+      '24/7 protection',
+      'Real-time threat updates',
+      'Incident response team',
+      'Compliance & audit ready'
+    ]
+  },
+  
+  website: {
+    types: [
+      'Company Profile - Professional company website',
+      'E-Commerce - Online store + payment gateway',
+      'CMS Website - Easy-to-update content',
+      'Web Application - Custom web application'
+    ],
+    features: [
+      'Responsive Design',
+      'SEO Optimization',
+      'Fast Loading',
+      'SSL Security',
+      'CMS Included',
+      'Google Analytics'
+    ],
+    support: ['HTML5/CSS3', 'JavaScript', 'PHP/Laravel', 'WordPress', 'MySQL', 'Bootstrap', 'React.js', 'Vue.js'],
+    benefits: [
+      'Modern & responsive design',
+      'SEO friendly',
+      '1 month free maintenance',
+      '1 year free domain & hosting'
+    ]
+  },
+  
+  iot: {
+    applications: [
+      'Smart Manufacturing',
+      'Smart Building',
+      'Temperature Monitoring',
+      'Fleet Tracking',
+      'Smart Agriculture',
+      'Healthcare IoT'
+    ],
+    components: [
+      'Sensors & Devices',
+      'Connectivity (WiFi/LoRa/4G)',
+      'IoT Platform',
+      'Dashboard & Analytics'
+    ],
+    support: ['ESP32/8266', 'Arduino', 'Raspberry Pi', 'LoRaWAN', 'MQTT', 'Node-RED', 'AWS IoT', 'ThingsBoard'],
+    benefits: [
+      'Real-time monitoring',
+      'Easy integration',
+      'Scalable for industry',
+      'Operational efficiency'
+    ]
+  },
+  
+  procurement: {
+    categories: [
+      'Hardware: Server, PC, Network, Printer',
+      'Software: License, Antivirus, ERP',
+      'Accessories: HDD, RAM, Cable, UPS',
+      'Cloud Services: VPS, Hosting, Email'
+    ],
+    process: [
+      'Needs consultation',
+      'Competitive price quote',
+      'Fast order process',
+      'Flexible payment',
+      'Guaranteed delivery',
+      'Warranty & support'
+    ],
+    support: ['Cisco', 'MikroTik', 'Dell', 'HP', 'Lenovo', 'Synology', 'Fortinet', 'Ubiquiti'],
+    benefits: [
+      'Competitive prices',
+      'Official warranty',
+      'Fast delivery',
+      'Technical support',
+      'After sales service'
+    ]
   }
 };
 
 // ==================== VARIABEL GLOBAL ====================
 let currentLang = 'id';
 
-// ==================== FUNGSI GET MODAL CONTENT ====================
-function getModalContent(service, lang) {
-  const t = translations[lang];
-  
-  const contents = {
-    manage: {
-      title: t.modalManageTitle,
-      content: `
-        <div class="service-description">
-          <p class="service-desc-text">${t.modalManageDesc}</p>
-        </div>
-        
-        <div class="service-split mb-4">
-          <div class="split-card preventive">
-            <h4><i class="fas fa-calendar-check"></i> ${t.modalManagePrev}</h4>
-            <ul>
-              <li>${t.modalManagePrev1}</li>
-              <li>${t.modalManagePrev2}</li>
-              <li>${t.modalManagePrev3}</li>
-              <li>${t.modalManagePrev4}</li>
-              <li>${t.modalManagePrev5}</li>
-            </ul>
-          </div>
-          <div class="split-card corrective">
-            <h4><i class="fas fa-tools"></i> ${t.modalManageCorr}</h4>
-            <ul>
-              <li>${t.modalManageCorr1}</li>
-              <li>${t.modalManageCorr2}</li>
-              <li>${t.modalManageCorr3}</li>
-              <li>${t.modalManageCorr4}</li>
-              <li>${t.modalManageCorr5}</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="service-support mb-4">
-          <h4><i class="fas fa-headset me-2"></i> ${t.modalManageSupported}</h4>
-          <div class="support-grid">
-            <div class="support-item"><i class="fas fa-server"></i> Server</div>
-            <div class="support-item"><i class="fas fa-network-wired"></i> Network</div>
-            <div class="support-item"><i class="fas fa-database"></i> Database</div>
-            <div class="support-item"><i class="fas fa-desktop"></i> Workstation</div>
-            <div class="support-item"><i class="fas fa-print"></i> Printer</div>
-            <div class="support-item"><i class="fas fa-cloud"></i> Cloud</div>
-            <div class="support-item"><i class="fas fa-shield-alt"></i> Security</div>
-            <div class="support-item"><i class="fas fa-mobile-alt"></i> Mobile Device</div>
-          </div>
-        </div>
-        
-        <div class="service-benefits">
-          <h4><i class="fas fa-medal me-2"></i> ${t.modalManageBenefits}</h4>
-          <ul>
-            <li><i class="fas fa-check-circle text-success"></i> ${t.modalManageBenefit1}</li>
-            <li><i class="fas fa-check-circle text-success"></i> ${t.modalManageBenefit2}</li>
-            <li><i class="fas fa-check-circle text-success"></i> ${t.modalManageBenefit3}</li>
-          </ul>
-        </div>
-      `
-    },
-    
-    network: {
-      title: t.modalNetworkTitle,
-      content: `
-        <div class="service-description">
-          <p class="service-desc-text">${t.modalNetworkDesc}</p>
-        </div>
-        
-        <div class="row g-4 mb-4">
-          <div class="col-md-6">
-            <div class="split-card">
-              <h4><i class="fas fa-cog"></i> ${t.modalNetworkFeatures}</h4>
-              <ul>
-                <li>${t.modalNetworkFeature1}</li>
-                <li>${t.modalNetworkFeature2}</li>
-                <li>${t.modalNetworkFeature3}</li>
-                <li>${t.modalNetworkFeature4}</li>
-                <li>${t.modalNetworkFeature5}</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="split-card">
-              <h4><i class="fas fa-star"></i> ${t.modalNetworkAdvantages}</h4>
-              <ul>
-                <li>${t.modalNetworkAdv1}</li>
-                <li>${t.modalNetworkAdv2}</li>
-                <li>${t.modalNetworkAdv3}</li>
-                <li>${t.modalNetworkAdv4}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="service-support mb-4">
-          <h4><i class="fas fa-box me-2"></i> ${t.modalNetworkProvided}</h4>
-          <div class="support-grid">
-            <div class="support-item">LAN/WAN</div>
-            <div class="support-item">Wireless</div>
-            <div class="support-item">Firewall</div>
-            <div class="support-item">Load Balancer</div>
-            <div class="support-item">VPN</div>
-            <div class="support-item">SD-WAN</div>
-            <div class="support-item">CCTV Network</div>
-            <div class="support-item">Fiber Optic</div>
-          </div>
-        </div>
-        
-        <div class="service-benefits">
-          <h4><i class="fas fa-medal me-2"></i> Keunggulan Layanan</h4>
-          <ul>
-            <li><i class="fas fa-check-circle text-success"></i> Desain sesuai kebutuhan bisnis</li>
-            <li><i class="fas fa-check-circle text-success"></i> Skalabilitas tinggi</li>
-            <li><i class="fas fa-check-circle text-success"></i> Monitoring 24/7</li>
-          </ul>
-        </div>
-      `
-    },
-    
-    security: {
-      title: t.modalSecurityTitle,
-      content: `
-        <div class="service-description">
-          <p class="service-desc-text">${t.modalSecurityDesc}</p>
-        </div>
-        
-        <div class="mb-4">
-          <h4 class="mb-3"><i class="fas fa-layer-group me-2"></i> ${t.modalSecurityLayers}</h4>
-          <div class="security-layers">
-            <div class="layer-item">
-              <span class="layer-icon"><i class="fas fa-shield"></i></span>
-              <span>${t.modalSecurityLayer1}</span>
-            </div>
-            <div class="layer-item">
-              <span class="layer-icon"><i class="fas fa-eye"></i></span>
-              <span>${t.modalSecurityLayer2}</span>
-            </div>
-            <div class="layer-item">
-              <span class="layer-icon"><i class="fas fa-bolt"></i></span>
-              <span>${t.modalSecurityLayer3}</span>
-            </div>
-            <div class="layer-item">
-              <span class="layer-icon"><i class="fas fa-sync-alt"></i></span>
-              <span>${t.modalSecurityLayer4}</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="service-support mb-4">
-          <h4><i class="fas fa-shield-alt me-2"></i> ${t.modalSecurityServices}</h4>
-          <div class="support-grid">
-            <div class="support-item"><i class="fas fa-fire"></i> Firewall</div>
-            <div class="support-item"><i class="fas fa-virus"></i> Antivirus</div>
-            <div class="support-item"><i class="fas fa-desktop"></i> Endpoint</div>
-            <div class="support-item"><i class="fas fa-eye"></i> Monitoring</div>
-            <div class="support-item"><i class="fas fa-search"></i> VA</div>
-            <div class="support-item"><i class="fas fa-cloud"></i> DDoS Protection</div>
-          </div>
-        </div>
-        
-        <div class="service-benefits">
-          <h4><i class="fas fa-medal me-2"></i> Keunggulan Keamanan</h4>
-          <ul>
-            <li><i class="fas fa-check-circle text-success"></i> Perlindungan 24/7</li>
-            <li><i class="fas fa-check-circle text-success"></i> Update ancaman real-time</li>
-            <li><i class="fas fa-check-circle text-success"></i> Tim response insiden</li>
-          </ul>
-        </div>
-      `
-    },
-    
-    website: {
-      title: t.modalWebsiteTitle,
-      content: `
-        <div class="service-description">
-          <p class="service-desc-text">${t.modalWebsiteDesc}</p>
-        </div>
-        
-        <div class="row g-4 mb-4">
-          <div class="col-md-6">
-            <div class="split-card">
-              <h4><i class="fas fa-laptop"></i> ${t.modalWebsiteTypes}</h4>
-              <ul>
-                <li><strong>Company Profile</strong> - ${lang === 'id' ? 'Website profesional perusahaan' : 'Professional company website'}</li>
-                <li><strong>E-Commerce</strong> - ${lang === 'id' ? 'Toko online + payment gateway' : 'Online store + payment gateway'}</li>
-                <li><strong>CMS Website</strong> - ${lang === 'id' ? 'Konten mudah diupdate' : 'Easy-to-update content'}</li>
-                <li><strong>Web Application</strong> - ${lang === 'id' ? 'Aplikasi web custom' : 'Custom web application'}</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="split-card">
-              <h4><i class="fas fa-star"></i> ${t.modalWebsiteFeatures}</h4>
-              <ul>
-                <li>✓ Responsive Design</li>
-                <li>✓ SEO Optimization</li>
-                <li>✓ Fast Loading</li>
-                <li>✓ SSL Security</li>
-                <li>✓ CMS Included</li>
-                <li>✓ Google Analytics</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="service-support mb-4">
-          <h4><i class="fas fa-code me-2"></i> Teknologi Yang Kami Gunakan</h4>
-          <div class="support-grid">
-            <div class="support-item">HTML5/CSS3</div>
-            <div class="support-item">JavaScript</div>
-            <div class="support-item">PHP/Laravel</div>
-            <div class="support-item">WordPress</div>
-            <div class="support-item">MySQL</div>
-            <div class="support-item">Bootstrap</div>
-          </div>
-        </div>
-        
-        <div class="service-benefits">
-          <h4><i class="fas fa-medal me-2"></i> Keunggulan Website Kami</h4>
-          <ul>
-            <li><i class="fas fa-check-circle text-success"></i> Desain modern & responsif</li>
-            <li><i class="fas fa-check-circle text-success"></i> SEO friendly</li>
-            <li><i class="fas fa-check-circle text-success"></i> Maintenance gratis 1 bulan</li>
-          </ul>
-        </div>
-      `
-    },
-    
-    iot: {
-      title: t.modalIoTTitle,
-      content: `
-        <div class="service-description">
-          <p class="service-desc-text">${t.modalIoTDesc}</p>
-        </div>
-        
-        <div class="row g-4 mb-4">
-          <div class="col-md-6">
-            <div class="split-card">
-              <h4><i class="fas fa-microchip"></i> ${t.modalIoTApplications}</h4>
-              <ul>
-                <li>Smart Manufacturing</li>
-                <li>Smart Building</li>
-                <li>Temperature Monitoring</li>
-                <li>Fleet Tracking</li>
-                <li>Smart Agriculture</li>
-                <li>Healthcare IoT</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="split-card">
-              <h4><i class="fas fa-cog"></i> ${t.modalIoTComponents}</h4>
-              <ul>
-                <li>Sensors & Devices</li>
-                <li>Connectivity (WiFi/LoRa/4G)</li>
-                <li>IoT Platform</li>
-                <li>Dashboard & Analytics</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="service-support mb-4">
-          <h4><i class="fas fa-wifi me-2"></i> Konektivitas & Hardware</h4>
-          <div class="support-grid">
-            <div class="support-item">ESP32/8266</div>
-            <div class="support-item">Arduino</div>
-            <div class="support-item">Raspberry Pi</div>
-            <div class="support-item">LoRaWAN</div>
-            <div class="support-item">MQTT</div>
-            <div class="support-item">Node-RED</div>
-          </div>
-        </div>
-        
-        <div class="service-benefits">
-          <h4><i class="fas fa-medal me-2"></i> Keunggulan IoT Kami</h4>
-          <ul>
-            <li><i class="fas fa-check-circle text-success"></i> Real-time monitoring</li>
-            <li><i class="fas fa-check-circle text-success"></i> Integrasi mudah</li>
-            <li><i class="fas fa-check-circle text-success"></i> Skalabel untuk industri</li>
-          </ul>
-        </div>
-      `
-    },
-    
-    procurement: {
-      title: t.modalProcurementTitle,
-      content: `
-        <div class="service-description">
-          <p class="service-desc-text">${t.modalProcurementDesc}</p>
-        </div>
-        
-        <div class="row g-4 mb-4">
-          <div class="col-md-6">
-            <div class="split-card">
-              <h4><i class="fas fa-box"></i> ${t.modalProcurementCategories}</h4>
-              <ul>
-                <li><strong>Hardware:</strong> Server, PC, Network, Printer</li>
-                <li><strong>Software:</strong> License, Antivirus, ERP</li>
-                <li><strong>Accessories:</strong> HDD, RAM, Cable, UPS</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="split-card">
-              <h4><i class="fas fa-clock"></i> ${t.modalProcurementProcess}</h4>
-              <ul>
-                <li>1. Konsultasi kebutuhan</li>
-                <li>2. Quote harga</li>
-                <li>3. Proses order</li>
-                <li>4. Pembayaran</li>
-                <li>5. Pengiriman</li>
-                <li>6. Garansi & support</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="service-support mb-4">
-          <h4><i class="fas fa-building me-2"></i> Brand Ternama</h4>
-          <div class="support-grid">
-            <div class="support-item">Cisco</div>
-            <div class="support-item">MikroTik</div>
-            <div class="support-item">Dell</div>
-            <div class="support-item">HP</div>
-            <div class="support-item">Lenovo</div>
-            <div class="support-item">Synology</div>
-            <div class="support-item">Fortinet</div>
-            <div class="support-item">Ubiquiti</div>
-          </div>
-        </div>
-        
-        <div class="service-benefits">
-          <h4><i class="fas fa-medal me-2"></i> ${t.modalProcurementBenefits}</h4>
-          <ul>
-            <li><i class="fas fa-check-circle text-success"></i> Harga kompetitif</li>
-            <li><i class="fas fa-check-circle text-success"></i> Garansi resmi</li>
-            <li><i class="fas fa-check-circle text-success"></i> Pengiriman cepat</li>
-            <li><i class="fas fa-check-circle text-success"></i> Technical support</li>
-          </ul>
-        </div>
-      `
-    }
-  };
-  
-  return contents[service];
+// ==================== FUNGSI GET SERVICE FROM URL ====================
+function getServiceFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('service') || 'manage';
 }
 
-// ==================== FUNGSI CHANGE LANGUAGE ====================
-function changeLanguage(lang) {
-  currentLang = lang;
+// ==================== FUNGSI SET ACTIVE MENU ====================
+function setActiveMenu(service) {
+  document.querySelectorAll('.service-menu-item').forEach(item => {
+    item.classList.remove('active');
+    if (item.dataset.service === service) {
+      item.classList.add('active');
+    }
+  });
+}
+
+// ==================== FUNGSI RENDER SERVICE CONTENT ====================
+function renderServiceContent(service, lang) {
+  const t = translations[lang];
+  const features = serviceFeatures[service];
+  
+  if (!features) return;
+  
+  let content = '';
+  
+  // Description
+  const descKey = `service${service.charAt(0).toUpperCase() + service.slice(1)}Desc`;
+  content += `
+    <div class="service-description">
+      <p>${t[descKey]}</p>
+    </div>
+    
+    <div class="service-features">
+  `;
+  
+  // Dynamic features based on service type
+  if (service === 'manage') {
+    content += `
+      <div class="feature-card">
+        <h4><i class="fas fa-calendar-check"></i> ${t.featurePreventive}</h4>
+        <ul>
+          ${features.preventive.map(item => `<li><i class="fas fa-check-circle text-success me-2"></i> ${item}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h4><i class="fas fa-tools"></i> ${t.featureCorrective}</h4>
+        <ul>
+          ${features.corrective.map(item => `<li><i class="fas fa-check-circle text-success me-2"></i> ${item}</li>`).join('')}
+        </ul>
+      </div>
+    `;
+  } else if (service === 'network') {
+    content += `
+      <div class="feature-card">
+        <h4><i class="fas fa-cog"></i> ${t.featureMainFeatures}</h4>
+        <ul>
+          ${features.mainFeatures.map(item => `<li><i class="fas fa-check-circle text-success me-2"></i> ${item}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h4><i class="fas fa-star"></i> ${t.featureAdvantages}</h4>
+        <ul>
+          ${features.advantages.map(item => `<li><i class="fas fa-check-circle text-success me-2"></i> ${item}</li>`).join('')}
+        </ul>
+      </div>
+    `;
+  } else if (service === 'security') {
+    content += `
+      <div class="feature-card">
+        <h4><i class="fas fa-layer-group"></i> ${t.featureSecurityLayers}</h4>
+        <ul>
+          ${features.layers.map(item => `<li><i class="fas fa-check-circle text-success me-2"></i> ${item}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h4><i class="fas fa-shield-alt"></i> ${t.featureSecurityServices}</h4>
+        <ul>
+          ${features.services.map(item => `<li><i class="fas fa-check-circle text-success me-2"></i> ${item}</li>`).join('')}
+        </ul>
+      </div>
+    `;
+  } else if (service === 'website') {
+    content += `
+      <div class="feature-card">
+        <h4><i class="fas fa-laptop"></i> ${t.featureWebsiteTypes}</h4>
+        <ul>
+          ${features.types.map(item => `<li><i class="fas fa-check-circle text-success me-2"></i> ${item}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h4><i class="fas fa-star"></i> ${t.featureWebsiteFeatures}</h4>
+        <ul>
+          ${features.features.map(item => `<li><i class="fas fa-check-circle text-success me-2"></i> ${item}</li>`).join('')}
+        </ul>
+      </div>
+    `;
+  } else if (service === 'iot') {
+    content += `
+      <div class="feature-card">
+        <h4><i class="fas fa-microchip"></i> ${t.featureIoTApps}</h4>
+        <ul>
+          ${features.applications.map(item => `<li><i class="fas fa-check-circle text-success me-2"></i> ${item}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h4><i class="fas fa-cog"></i> ${t.featureIoTComponents}</h4>
+        <ul>
+          ${features.components.map(item => `<li><i class="fas fa-check-circle text-success me-2"></i> ${item}</li>`).join('')}
+        </ul>
+      </div>
+    `;
+  } else if (service === 'procurement') {
+    content += `
+      <div class="feature-card">
+        <h4><i class="fas fa-box"></i> ${t.featureProductCategories}</h4>
+        <ul>
+          ${features.categories.map(item => `<li><i class="fas fa-check-circle text-success me-2"></i> ${item}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h4><i class="fas fa-clock"></i> ${t.featureProcess}</h4>
+        <ul>
+          ${features.process.map(item => `<li><i class="fas fa-check-circle text-success me-2"></i> ${item}</li>`).join('')}
+        </ul>
+      </div>
+    `;
+  }
+  
+  // Close features div
+  content += `</div>`;
+  
+  // Support section
+  content += `
+    <div class="service-support mb-4">
+      <h4><i class="fas fa-headset me-2"></i> ${t.supportTitle}</h4>
+      <div class="support-grid">
+        ${features.support.map(item => `<div class="support-item">${item}</div>`).join('')}
+      </div>
+    </div>
+    
+    <div class="benefits-list">
+      <h4><i class="fas fa-medal me-2"></i> ${t.benefitsTitle}</h4>
+      <ul>
+        ${features.benefits.map(benefit => `<li><i class="fas fa-check-circle text-success"></i> ${benefit}</li>`).join('')}
+      </ul>
+    </div>
+  `;
+  
+  const contentDiv = document.getElementById('serviceContent');
+  if (contentDiv) {
+    contentDiv.innerHTML = content;
+  }
+}
+
+// ==================== FUNGSI UPDATE ALL TEXTS ====================
+function updateAllTexts(lang) {
+  const t = translations[lang];
   
   // Update semua elemen dengan ID
-  for (const [key, value] of Object.entries(translations[lang])) {
-    const element = document.getElementById(key);
-    if (element) {
-      element.textContent = value;
-    }
+  for (const [key, value] of Object.entries(t)) {
+    const elements = document.querySelectorAll(`[id="${key}"]`);
+    elements.forEach(element => {
+      if (element) {
+        // Handle special cases
+        if (key === 'footerCopyright') {
+          const year = new Date().getFullYear();
+          element.textContent = value.replace('2025', year);
+        } else if (key.includes('testimonial') && key.includes('Text')) {
+          element.textContent = `"${value}"`;
+        } else if (key.includes('testimonial') && key.includes('Author')) {
+          const parts = value.split(' - ');
+          if (parts.length === 2) {
+            element.innerHTML = `<strong>${parts[0]}</strong> - ${parts[1]}`;
+          } else {
+            element.textContent = value;
+          }
+        } else {
+          element.textContent = value;
+        }
+      }
+    });
   }
   
   // Update dropdown services text
   const servicesDropdown = document.getElementById('servicesDropdown');
   if (servicesDropdown) {
-    servicesDropdown.textContent = translations[lang].navServices;
+    servicesDropdown.textContent = t.navServices;
   }
   
-  // Mapping service ke property translations
-  const serviceMap = {
-    'manage': 'navManageService',
-    'network': 'navNetwork',
-    'security': 'navSecurity',
-    'website': 'navWebsite',
-    'iot': 'navIot',
-    'procurement': 'navProcurement'
-  };
-  
-  // Update semua dropdown item
-  document.querySelectorAll('.dropdown-item[data-service]').forEach(item => {
-    const service = item.getAttribute('data-service');
-    const translationKey = serviceMap[service];
-    if (translationKey) {
-      item.textContent = translations[lang][translationKey];
-    }
-  });
-  
-  // Update selected language text
+  // Update selected language
   const selectedLangSpan = document.getElementById('selected-language');
   if (selectedLangSpan) {
     selectedLangSpan.textContent = lang === 'id' ? 'Indonesia' : 'English';
   }
   
-  // Update active state di dropdown items
+  // Update active state in language dropdown
   document.querySelectorAll('.language-item').forEach(item => {
     item.classList.remove('active');
+    const icon = item.querySelector('i');
+    
     if (item.dataset.lang === lang) {
       item.classList.add('active');
-      const icon = item.querySelector('i');
       if (icon) icon.style.opacity = '1';
     } else {
-      const icon = item.querySelector('i');
       if (icon) icon.style.opacity = '0';
     }
   });
   
-  // Update modal if open
-  const modalElement = document.getElementById('serviceModal');
-  if (modalElement.classList.contains('show')) {
-    const modalTitle = document.getElementById('serviceModalLabel').textContent.toLowerCase();
-    let service = 'manage';
-    if (modalTitle.includes('network')) service = 'network';
-    else if (modalTitle.includes('security')) service = 'security';
-    else if (modalTitle.includes('website')) service = 'website';
-    else if (modalTitle.includes('iot')) service = 'iot';
-    else if (modalTitle.includes('procurement')) service = 'procurement';
+  // Update service page content if on services.html
+  if (window.location.pathname.includes('services.html')) {
+    const currentService = getServiceFromUrl();
     
-    const content = getModalContent(service, lang);
-    document.getElementById('serviceModalLabel').textContent = content.title;
-    document.getElementById('serviceModalBody').innerHTML = content.content;
+    // Update service menu items
+    document.querySelectorAll('.service-menu-item').forEach(item => {
+      const service = item.dataset.service;
+      const menuKey = `serviceMenu${service.charAt(0).toUpperCase() + service.slice(1)}`;
+      if (t[menuKey]) {
+        const icon = item.querySelector('i').outerHTML;
+        item.innerHTML = icon + ' ' + t[menuKey];
+      }
+    });
+    
+    // Update service menu title
+    const menuTitle = document.getElementById('serviceMenuTitle');
+    if (menuTitle) menuTitle.textContent = t.serviceMenuTitle;
+    
+    // Update service menu help
+    const menuHelp = document.getElementById('serviceMenuHelp');
+    if (menuHelp) menuHelp.textContent = t.serviceMenuHelp;
+    
+    const menuHelpDesc = document.getElementById('serviceMenuHelpDesc');
+    if (menuHelpDesc) menuHelpDesc.textContent = t.serviceMenuHelpDesc;
+    
+    const menuWA = document.getElementById('serviceMenuWA');
+    if (menuWA) menuWA.innerHTML = `<i class="fab fa-whatsapp me-2"></i> ${t.ctaWA}`;
+    
+    // Update service detail title
+    const serviceTitle = document.getElementById('serviceDetailTitle');
+    const titleKey = `nav${currentService.charAt(0).toUpperCase() + currentService.slice(1)}`;
+    if (serviceTitle && t[titleKey]) {
+      serviceTitle.textContent = t[titleKey];
+    }
+    
+    // Update CTA section
+    const ctaTitle = document.getElementById('ctaTitle');
+    if (ctaTitle) ctaTitle.textContent = t.ctaTitle;
+    
+    const ctaDesc = document.getElementById('ctaDesc');
+    if (ctaDesc) ctaDesc.textContent = t.ctaDesc;
+    
+    const ctaContact = document.getElementById('ctaContact');
+    if (ctaContact) ctaContact.textContent = t.ctaContact;
+    
+    const ctaWA = document.getElementById('ctaWA');
+    if (ctaWA) ctaWA.textContent = t.ctaWA;
+    
+    // Render service content with new language
+    renderServiceContent(currentService, lang);
   }
+}
+
+// ==================== FUNGSI CHANGE LANGUAGE ====================
+function changeLanguage(lang) {
+  currentLang = lang;
+  updateAllTexts(lang);
+  localStorage.setItem('preferredLanguage', lang);
 }
 
 // ==================== FUNGSI HANDLE FORM SUBMIT ====================
@@ -741,68 +723,54 @@ async function handleFormSubmit(e) {
   const submitSpan = document.getElementById('contactSend');
   const statusDiv = document.getElementById('formStatus');
   
-  // Validasi form
+  // Validasi
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const message = document.getElementById('message').value;
   
   if (!name || !email || !message) {
-    statusDiv.className = 'alert alert-danger';
-    statusDiv.textContent = translations[currentLang].formRequired;
-    statusDiv.classList.remove('d-none');
-    
-    // Auto hide setelah 5 detik
-    setTimeout(() => {
-      statusDiv.classList.add('d-none');
-    }, 5000);
+    showStatus('danger', translations[currentLang].formRequired);
     return;
   }
   
-  // Tampilkan loading
-  submitBtn.disabled = true;
-  submitSpan.textContent = translations[currentLang].formSending;
-  statusDiv.classList.add('d-none');
+  // Loading
+  if (submitBtn) submitBtn.disabled = true;
+  if (submitSpan) submitSpan.textContent = translations[currentLang].formSending;
+  if (statusDiv) statusDiv.classList.add('d-none');
   
   try {
     // Ganti dengan endpoint Formspree Anda
     const response = await fetch('https://formspree.io/f/your-form-id', {
       method: 'POST',
       body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
+      headers: { 'Accept': 'application/json' }
     });
     
     if (response.ok) {
-      // Success
-      statusDiv.className = 'alert alert-success';
-      statusDiv.textContent = translations[currentLang].formSuccess;
-      statusDiv.classList.remove('d-none');
+      showStatus('success', translations[currentLang].formSuccess);
       form.reset();
-      
-      // Auto hide setelah 5 detik
-      setTimeout(() => {
-        statusDiv.classList.add('d-none');
-      }, 5000);
     } else {
-      // Error
-      throw new Error('Form submission failed');
+      throw new Error('Failed');
     }
   } catch (error) {
-    // Error
-    statusDiv.className = 'alert alert-danger';
-    statusDiv.textContent = translations[currentLang].formError;
-    statusDiv.classList.remove('d-none');
-    
-    // Auto hide setelah 5 detik
-    setTimeout(() => {
-      statusDiv.classList.add('d-none');
-    }, 5000);
+    showStatus('danger', translations[currentLang].formError);
   } finally {
-    // Kembalikan button ke normal
-    submitBtn.disabled = false;
-    submitSpan.textContent = translations[currentLang].contactSend;
+    if (submitBtn) submitBtn.disabled = false;
+    if (submitSpan) submitSpan.textContent = translations[currentLang].contactSend;
   }
+}
+
+function showStatus(type, message) {
+  const statusDiv = document.getElementById('formStatus');
+  if (!statusDiv) return;
+  
+  statusDiv.className = `alert alert-${type}`;
+  statusDiv.textContent = message;
+  statusDiv.classList.remove('d-none');
+  
+  setTimeout(() => {
+    statusDiv.classList.add('d-none');
+  }, 5000);
 }
 
 // ==================== EVENT LISTENERS ====================
@@ -819,10 +787,8 @@ document.querySelectorAll('.language-item').forEach(item => {
 // Navbar scroll
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
+  if (navbar) {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
   }
 });
 
@@ -839,18 +805,16 @@ if (helpButton) {
 // Active nav link
 window.addEventListener('scroll', () => {
   const sections = document.querySelectorAll('section[id]');
-  if (sections.length === 0) return;
-  
   const scrollY = window.pageYOffset;
   
   sections.forEach(section => {
-    const sectionHeight = section.offsetHeight;
     const sectionTop = section.offsetTop - 100;
+    const sectionBottom = sectionTop + section.offsetHeight;
     const sectionId = section.getAttribute('id');
     const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
     
     if (navLink) {
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      if (scrollY > sectionTop && scrollY < sectionBottom) {
         navLink.style.color = 'var(--orange-accent)';
       } else {
         navLink.style.color = 'rgba(255,255,255,0.85)';
@@ -861,108 +825,94 @@ window.addEventListener('scroll', () => {
 
 // ==================== DOM CONTENT LOADED ====================
 document.addEventListener('DOMContentLoaded', function() {
-  // Inisialisasi AOS
+  // Initialize AOS
   AOS.init({
-    duration: 1000,
+    duration: 800,
     once: true,
-    offset: 100
+    offset: 50,
+    disable: window.innerWidth < 768
   });
 
-  // Inisialisasi Bootstrap Carousel
-  var carousel = new bootstrap.Carousel(document.getElementById('projectsCarousel'), {
-    interval: 3000,
-    wrap: true,
-    pause: false
-  });
-
-  // Inisialisasi semua dropdown Bootstrap
-  var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
-  var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
-    return new bootstrap.Dropdown(dropdownToggleEl)
-  });
-
-  // Event listener untuk dropdown item (layanan)
-  document.querySelectorAll('.dropdown-item[data-service]').forEach(item => {
-    item.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      // Tutup dropdown setelah diklik
-      const dropdownToggle = document.querySelector('#servicesDropdown');
-      if (dropdownToggle) {
-        const dropdown = bootstrap.Dropdown.getInstance(dropdownToggle);
-        if (dropdown) {
-          dropdown.hide();
-        }
-      }
-      
-      // Buka modal service
-      const service = this.getAttribute('data-service');
-      if (service) {
-        const content = getModalContent(service, currentLang);
-        document.getElementById('serviceModalLabel').textContent = content.title;
-        document.getElementById('serviceModalBody').innerHTML = content.content;
-        
-        const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
-        modal.show();
-      }
+  // Initialize Bootstrap Carousel
+  const carouselElement = document.getElementById('projectsCarousel');
+  if (carouselElement) {
+    new bootstrap.Carousel(carouselElement, {
+      interval: 3000,
+      wrap: true,
+      pause: false
     });
-  });
-
-  // Event listener untuk link service di footer
-  document.querySelectorAll('.service-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const service = this.getAttribute('data-service');
-      
-      if (service) {
-        const content = getModalContent(service, currentLang);
-        document.getElementById('serviceModalLabel').textContent = content.title;
-        document.getElementById('serviceModalBody').innerHTML = content.content;
-        
-        const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
-        modal.show();
-      }
-    });
-  });
-
-  // Set bahasa awal
-  changeLanguage('id');
-  
-  // Update copyright year
-  const year = new Date().getFullYear();
-  const copyrightEl = document.getElementById('footerCopyright');
-  if (copyrightEl) {
-    copyrightEl.textContent = copyrightEl.textContent.replace('2025', year);
   }
+
+  // Load saved language preference
+  const savedLang = localStorage.getItem('preferredLanguage') || 'id';
   
-  // Tutup navbar mobile saat link diklik
+  // Set bahasa awal
+  changeLanguage(savedLang);
+  
+  // Close mobile menu on link click
   const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
   const navbarCollapse = document.querySelector('.navbar-collapse');
   
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      if (navbarCollapse?.classList.contains('show')) {
         navbarCollapse.classList.remove('show');
       }
     });
   });
 
-  // Handle form submit
+  // Contact form
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', handleFormSubmit);
   }
-
-  // Tracking social media clicks
-  document.querySelectorAll('.social-icon').forEach(icon => {
-    icon.addEventListener('click', function(e) {
-      const platform = this.classList.contains('instagram') ? 'Instagram' :
-                      this.classList.contains('linkedin') ? 'LinkedIn' :
-                      this.classList.contains('gmail') ? 'Gmail' : 
-                      this.classList.contains('facebook') ? 'Facebook' : 'Social';
-      
-      console.log(`Social media clicked: ${platform}`);
-      // Anda bisa menambahkan Google Analytics di sini
+  
+  // Service page specific initialization
+  if (window.location.pathname.includes('services.html')) {
+    const service = getServiceFromUrl();
+    setActiveMenu(service);
+    
+    // Handle menu clicks
+    document.querySelectorAll('.service-menu-item').forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const service = this.dataset.service;
+        
+        // Update URL without reload
+        const url = new URL(window.location);
+        url.searchParams.set('service', service);
+        window.history.pushState({}, '', url);
+        
+        // Update active menu
+        setActiveMenu(service);
+        
+        // Update title
+        const titleKey = `nav${service.charAt(0).toUpperCase() + service.slice(1)}`;
+        const titleEl = document.getElementById('serviceDetailTitle');
+        if (titleEl && translations[currentLang][titleKey]) {
+          titleEl.textContent = translations[currentLang][titleKey];
+        }
+        
+        // Render new content with current language
+        renderServiceContent(service, currentLang);
+        
+        // Scroll ke atas
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     });
-  });
+    
+    // Handle browser back/forward
+    window.addEventListener('popstate', function() {
+      const service = getServiceFromUrl();
+      setActiveMenu(service);
+      
+      const titleKey = `nav${service.charAt(0).toUpperCase() + service.slice(1)}`;
+      const titleEl = document.getElementById('serviceDetailTitle');
+      if (titleEl && translations[currentLang][titleKey]) {
+        titleEl.textContent = translations[currentLang][titleKey];
+      }
+      
+      renderServiceContent(service, currentLang);
+    });
+  }
 });

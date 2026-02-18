@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan - RSE Digital Solution</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Copy semua CSS dari style.css di sini */
+    :root {
+      --deep-blue: #0A1F44;
+      --electric-blue: #007BFF;
+      --orange-accent: #FF7A00;
+      --light-bg: #ffffff;
+      --gray-light: #f8fafc;
+      --gray-medium: #e9edf2;
+      --text-dark: #1e293b;
+      --text-light: #64748b;
+      --shadow-sm: 0 5px 20px rgba(0,0,0,0.05);
+      --shadow-md: 0 10px 30px rgba(10,31,68,0.1);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Navigation */
+    .navbar {
+      background: var(--deep-blue) !important;
+      padding: 0.8rem 0;
+      box-shadow: 0 5px 20px rgba(10,31,68,0.3);
+    }
+    
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 1.3rem;
+    }
+    
+    .brand-rse { color: white; }
+    .brand-it { color: var(--electric-blue); }
+    .brand-solution { color: var(--orange-accent); font-size: 0.9rem; }
+    
+    .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      font-weight: 500;
+      padding: 0.5rem 1rem !important;
+      border-radius: 30px;
+    }
+    
+    .nav-link:hover {
+      color: var(--orange-accent) !important;
+      background: rgba(255,122,0,0.1);
+    }
+    
+    /* Dropdown */
+    .dropdown-menu {
+      background: var(--deep-blue);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 0.5rem;
+    }
+    
+    .dropdown-item {
+      color: rgba(255,255,255,0.9);
+      padding: 0.7rem 1.5rem;
+      border-radius: 12px;
+    }
+    
+    .dropdown-item:hover {
+      background: rgba(255,122,0,0.2);
+      color: var(--orange-accent);
+    }
+    
+    /* Language Dropdown */
+    .language-dropdown .btn {
+      border-radius: 30px;
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+      border-color: rgba(255,255,255,0.3);
+      color: white;
+    }
+    
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    
+    .section-subtitle {
+      display: inline-block;
+      color: var(--electric-blue);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--deep-blue);
+      margin-bottom: 1rem;
+    }
+    
+    .title-line {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--electric-blue), var(--orange-accent));
+      margin: 0 auto;
+      border-radius: 4px;
+    }
+    
+    /* Service Page Styles */
+    .service-detail-section {
+      padding: 40px 0;
+      background: #f8fafc;
+      min-height: 100vh;
+    }
+    
+    /* Service Menu Card */
+    .service-menu-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-md);
+      position: sticky;
+      top: 100px;
+    }
+    
+    .service-menu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .service-menu-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.8rem 1rem;
+      border-radius: 12px;
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: all 0.3s;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+    }
+    
+    .service-menu-item i {
+      width: 20px;
+      color: var(--electric-blue);
+      font-size: 1rem;
+    }
+    
+    .service-menu-item:hover {
+      background: #f0f7ff;
+      border-color: var(--electric-blue);
+      transform: translateX(5px);
+    }
+    
+    .service-menu-item.active {
+      background: linear-gradient(135deg, var(--deep-blue), #1a2f5a);
+      color: white;
+    }
+    
+    .service-menu-item.active i {
+      color: var(--orange-accent);
+    }
+    
+    .service-menu-cta {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+    }
+    
+    /* Service Content Card */
+    .service-content-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .service-description {
+      margin-bottom: 2rem;
+    }
+    
+    .service-description p {
+      font-size: 1rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+    
+    .service-features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .feature-card {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid #e9edf2;
+    }
+    
+    .feature-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--deep-blue);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .feature-card h4 i {
+      color: var(--electric-blue);
+    }
+    
+    .feature-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .feature-card ul li {
+      padding: 0.4rem 0;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      border-bottom: 1px dashed #e9edf2;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .feature-card ul li:last-child {
+      border-bottom: none;
+    }
+    
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    
+    .support-item {
+      background: #f8fafc;
+      padding: 0.8rem;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--deep-blue);
+      border: 1px solid #e9edf2;
+    }
+    
+    .benefits-list {
+      background: linear-gradient(135deg, #f0f7ff, #e6f0fa);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    
+    .benefits-list h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--deep-blue);
+    }
+    
+    .benefits-list ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .benefits-list ul li {
+      padding: 0.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      border-bottom: 1px dashed rgba(0,123,255,0.2);
+    }
+    
+    .benefits-list ul li i {
+      color: #28a745;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, #f8fafc, #ffffff);
+    }
+    
+    .cta-card {
+      background: linear-gradient(135deg, var(--deep-blue), #1a2f5a);
+      color: white;
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--deep-blue);
+      color: white;
+      padding: 2rem 0 1rem;
+      border-top: 3px solid var(--orange-accent);
+    }
+    
+    .footer-links a,
+    .footer-contact a,
+    .footer-contact span {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .social-icon.instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
+    
+    .social-icon.linkedin { background: #0077b5; }
+    .social-icon.gmail { background: #D44638; }
+    .social-icon.facebook { background: #1877f2; }
+    
+    /* Floating Buttons */
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .float-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50px;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    
+    .help-btn { background: var(--orange-accent); }
+    .whatsapp-btn { background: #25D366; }
+    
+    /* Responsive */
+    @media (min-width: 768px) {
+      .service-features {
+        grid-template-columns: 1fr 1fr;
+      }
+      .support-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation (copy dari services.html) -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <span class="brand-rse">RSE</span> <span class="brand-it">Digital</span> <span class="brand-solution">Solution</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" data-bs-toggle="dropdown">Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="?service=manage">Manage Service</a></li>
+            <li><a class="dropdown-item" href="?service=network">Network Infrastructure</a></li>
+            <li><a class="dropdown-item" href="?service=security">Security Infrastructure</a></li>
+            <li><a class="dropdown-item" href="?service=website">Website Development</a></li>
+            <li><a class="dropdown-item" href="?service=iot">IOT Solutions</a></li>
+            <li><a class="dropdown-item" href="?service=procurement">IT Procurement</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="index.html#projects">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="dropdown language-dropdown ms-3">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          <i class="fas fa-globe me-1"></i> <span id="selected-language">Indonesia</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item language-item" href="#" data-lang="id">Indonesia</a></li>
+          <li><a class="dropdown-item language-item" href="#" data-lang="en">English</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- SERVICE DETAIL SECTION -->
+<section class="service-detail-section py-5">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-subtitle">Our Services</span>
+      <h2 class="section-title" id="serviceDetailTitle">Manage Service</h2>
+      <div class="title-line"></div>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-3 mb-4">
+        <div class="service-menu-card">
+          <h5 class="fw-bold mb-3">Services List</h5>
+          <div class="service-menu-list">
+            <a href="?service=manage" class="service-menu-item active" data-service="manage">
+              <i class="fas fa-cogs"></i> Manage Service
+            </a>
+            <a href="?service=network" class="service-menu-item" data-service="network">
+              <i class="fas fa-network-wired"></i> Network Infrastructure
+            </a>
+            <a href="?service=security" class="service-menu-item" data-service="security">
+              <i class="fas fa-shield-alt"></i> Security Infrastructure
+            </a>
+            <a href="?service=website" class="service-menu-item" data-service="website">
+              <i class="fas fa-code"></i> Website Development
+            </a>
+            <a href="?service=iot" class="service-menu-item" data-service="iot">
+              <i class="fas fa-microchip"></i> IOT Solutions
+            </a>
+            <a href="?service=procurement" class="service-menu-item" data-service="procurement">
+              <i class="fas fa-box"></i> IT Procurement
+            </a>
+          </div>
+          <div class="service-menu-cta mt-4">
+            <h6>Need Help?</h6>
+            <p class="small">Free consultation with our team</p>
+            <a href="https://wa.me/628123456789" class="btn btn-success btn-sm w-100" target="_blank">
+              <i class="fab fa-whatsapp me-2"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-9">
+        <div class="service-content-card" id="serviceContent">
+          <div class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-3">Memuat layanan...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section py-5">
+  <div class="container">
+    <div class="cta-card text-center p-4 p-md-5 rounded-4">
+      <h3 class="fw-bold mb-3">Ready to Upgrade Your IT Infrastructure?</h3>
+      <p class="mb-4">Contact us now for free consultation and best offers</p>
+      <div class="cta-buttons">
+        <a href="index.html#contact" class="btn btn-primary me-2">Contact Us</a>
+        <a href="https://wa.me/628123456789" class="btn btn-outline-success" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (copy dari services.html) -->
+<footer class="footer">
+  <!-- ... footer content ... -->
+</footer>
+
+<!-- Floating Buttons -->
+<div class="floating-buttons">
+  <button class="float-btn help-btn" id="helpButton" title="Bantuan">
+    <i class="fas fa-headset"></i>
+  </button>
+  <a href="https://wa.me/628123456789" class="float-btn whatsapp-btn" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Service features data (langsung di sini)
+const serviceFeatures = {
+  manage: {
+    title: 'Manage Service',
+    description: 'Layanan pengelolaan IT menyeluruh yang mencakup pemeliharaan preventif dan korektif untuk memastikan infrastruktur teknologi Anda selalu dalam kondisi optimal.',
+    features: [
+      {
+        title: 'Preventive Maintenance',
+        icon: 'fa-calendar-check',
+        items: [
+          'Pemeriksaan rutin hardware & software',
+          'Update security patch & antivirus',
+          'Backup data terjadwal',
+          'Monitoring performa 24/7',
+          'Audit keamanan berkala'
+        ]
+      },
+      {
+        title: 'Corrective Maintenance',
+        icon: 'fa-tools',
+        items: [
+          'Response darurat < 1 jam',
+          'Perbaikan hardware/software',
+          'Data recovery',
+          'Root cause analysis',
+          'Reporting & rekomendasi'
+        ]
+      }
+    ],
+    support: ['Server', 'Network', 'Database', 'Workstation', 'Printer', 'Cloud', 'Security', 'Mobile Device'],
+    benefits: [
+      'Minimalkan downtime hingga 99.9%',
+      'Biaya operasional lebih terprediksi',
+      'Fokus pada bisnis inti',
+      'Tim support profesional 24/7'
+    ]
+  },
+  
+  network: {
+    title: 'Network Infrastructure',
+    description: 'Kami merancang, membangun, dan mengelola infrastruktur jaringan yang handal, scalable, dan aman untuk mendukung konektivitas bisnis Anda dengan performa tinggi.',
+    features: [
+      {
+        title: 'Fitur Utama',
+        icon: 'fa-cog',
+        items: [
+          'Desain jaringan enterprise-grade',
+          'Redundancy & high availability',
+          'Quality of Service (QoS)',
+          'Network segmentation',
+          'Monitoring & analytics real-time'
+        ]
+      },
+      {
+        title: 'Keunggulan',
+        icon: 'fa-star',
+        items: [
+          'Skalabilitas tinggi',
+          'Keamanan berlapis',
+          'Ketersediaan 99.9%',
+          'Manajemen terpusat'
+        ]
+      }
+    ],
+    support: ['LAN/WAN', 'Wireless', 'Firewall', 'Load Balancer', 'VPN', 'SD-WAN', 'CCTV Network', 'Fiber Optic'],
+    benefits: [
+      'Desain sesuai kebutuhan bisnis',
+      'Skalabilitas tinggi',
+      'Monitoring 24/7',
+      'Tim engineer bersertifikasi'
+    ]
+  },
+  
+  security: {
+    title: 'Security Infrastructure',
+    description: 'Melindungi aset digital dan infrastruktur kritis perusahaan Anda dengan pendekatan keamanan berlapis yang mencakup pencegahan, deteksi, dan respons terhadap ancaman siber.',
+    features: [
+      {
+        title: 'Lapisan Keamanan',
+        icon: 'fa-layer-group',
+        items: [
+          'Cegah - Firewall & Antivirus',
+          'Deteksi - IDS/IPS & Monitoring',
+          'Respon - Incident Response',
+          'Pulihkan - Backup & Recovery'
+        ]
+      },
+      {
+        title: 'Layanan Keamanan',
+        icon: 'fa-shield-alt',
+        items: [
+          'Firewall Management',
+          'Endpoint Protection',
+          'Vulnerability Assessment',
+          'DDoS Protection'
+        ]
+      }
+    ],
+    support: ['Firewall', 'Antivirus', 'Endpoint', 'Monitoring', 'VA Scanner', 'DDoS', 'Encryption', 'IAM'],
+    benefits: [
+      'Perlindungan 24/7',
+      'Update ancaman real-time',
+      'Tim response insiden',
+      'Compliance & audit ready'
+    ]
+  },
+  
+  website: {
+    title: 'Jasa Pembuatan Website',
+    description: 'Kami membantu Anda membangun website profesional yang responsif, cepat, dan SEO-friendly untuk meningkatkan visibilitas bisnis Anda di dunia digital.',
+    features: [
+      {
+        title: 'Jenis Website',
+        icon: 'fa-laptop',
+        items: [
+          'Company Profile - Website profesional perusahaan',
+          'E-Commerce - Toko online + payment gateway',
+          'CMS Website - Konten mudah diupdate',
+          'Web Application - Aplikasi web custom'
+        ]
+      },
+      {
+        title: 'Fitur Yang Kami Tawarkan',
+        icon: 'fa-star',
+        items: [
+          'Responsive Design',
+          'SEO Optimization',
+          'Fast Loading',
+          'SSL Security',
+          'CMS Included',
+          'Google Analytics'
+        ]
+      }
+    ],
+    support: ['HTML5/CSS3', 'JavaScript', 'PHP/Laravel', 'WordPress', 'MySQL', 'Bootstrap', 'React.js', 'Vue.js'],
+    benefits: [
+      'Desain modern & responsif',
+      'SEO friendly',
+      'Maintenance gratis 1 bulan',
+      'Free domain & hosting 1 tahun'
+    ]
+  },
+  
+  iot: {
+    title: 'IOT Solutions',
+    description: 'Menghubungkan perangkat fisik ke internet untuk mengumpulkan data, mengotomatisasi proses, dan memberikan insight real-time yang membantu pengambilan keputusan bisnis yang lebih cerdas.',
+    features: [
+      {
+        title: 'Aplikasi IoT',
+        icon: 'fa-microchip',
+        items: [
+          'Smart Manufacturing',
+          'Smart Building',
+          'Temperature Monitoring',
+          'Fleet Tracking',
+          'Smart Agriculture',
+          'Healthcare IoT'
+        ]
+      },
+      {
+        title: 'Komponen IoT',
+        icon: 'fa-cog',
+        items: [
+          'Sensors & Devices',
+          'Connectivity (WiFi/LoRa/4G)',
+          'IoT Platform',
+          'Dashboard & Analytics'
+        ]
+      }
+    ],
+    support: ['ESP32/8266', 'Arduino', 'Raspberry Pi', 'LoRaWAN', 'MQTT', 'Node-RED', 'AWS IoT', 'ThingsBoard'],
+    benefits: [
+      'Real-time monitoring',
+      'Integrasi mudah',
+      'Skalabel untuk industri',
+      'Efisiensi operasional'
+    ]
+  },
+  
+  procurement: {
+    title: 'Pengadaan Barang',
+    description: 'Layanan pengadaan perangkat keras, perangkat lunak, dan perlengkapan IT dengan harga kompetitif dan garansi resmi untuk mendukung kebutuhan operasional bisnis Anda.',
+    features: [
+      {
+        title: 'Kategori Produk',
+        icon: 'fa-box',
+        items: [
+          'Hardware: Server, PC, Network, Printer',
+          'Software: License, Antivirus, ERP',
+          'Accessories: HDD, RAM, Cable, UPS',
+          'Cloud Services: VPS, Hosting, Email'
+        ]
+      },
+      {
+        title: 'Proses Pengadaan',
+        icon: 'fa-clock',
+        items: [
+          'Konsultasi kebutuhan',
+          'Quote harga kompetitif',
+          'Proses order cepat',
+          'Pembayaran fleksibel',
+          'Pengiriman terjamin',
+          'Garansi & support'
+        ]
+      }
+    ],
+    support: ['Cisco', 'MikroTik', 'Dell', 'HP', 'Lenovo', 'Synology', 'Fortinet', 'Ubiquiti'],
+    benefits: [
+      'Harga kompetitif',
+      'Garansi resmi',
+      'Pengiriman cepat',
+      'Technical support',
+      'After sales service'
+    ]
+  }
+};
+
+// Function to get service from URL
+function getServiceFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('service') || 'manage';
+}
+
+// Function to set active menu
+function setActiveMenu(service) {
+  document.querySelectorAll('.service-menu-item').forEach(item => {
+    item.classList.remove('active');
+    if (item.dataset.service === service) {
+      item.classList.add('active');
+    }
+  });
+}
+
+// Function to render service content
+function renderServiceContent(service) {
+  const data = serviceFeatures[service];
+  if (!data) return;
+  
+  // Update title
+  const titleElement = document.getElementById('serviceDetailTitle');
+  if (titleElement) {
+    titleElement.textContent = data.title;
+  }
+  
+  // Build features HTML
+  let featuresHtml = '';
+  data.features.forEach(feature => {
+    featuresHtml += `
+      <div class="feature-card">
+        <h4><i class="fas ${feature.icon}"></i> ${feature.title}</h4>
+        <ul>
+          ${feature.items.map(item => `<li><i class="fas fa-check-circle text-success me-2"></i> ${item}</li>`).join('')}
+        </ul>
+      </div>
+    `;
+  });
+  
+  // Build support grid
+  const supportHtml = `
+    <div class="support-grid">
+      ${data.support.map(item => `<div class="support-item">${item}</div>`).join('')}
+    </div>
+  `;
+  
+  // Build benefits
+  const benefitsHtml = `
+    <div class="benefits-list">
+      <h4><i class="fas fa-medal me-2"></i> Keuntungan Layanan</h4>
+      <ul>
+        ${data.benefits.map(benefit => `<li><i class="fas fa-check-circle text-success"></i> ${benefit}</li>`).join('')}
+      </ul>
+    </div>
+  `;
+  
+  // Combine all
+  const fullHtml = `
+    <div class="service-description">
+      <p>${data.description}</p>
+    </div>
+    
+    <div class="service-features">
+      ${featuresHtml}
+    </div>
+    
+    <div class="service-support mb-4">
+      <h4><i class="fas fa-headset me-2"></i> Teknologi & Brand Yang Kami Dukung</h4>
+      ${supportHtml}
+    </div>
+    
+    ${benefitsHtml}
+  `;
+  
+  const contentDiv = document.getElementById('serviceContent');
+  if (contentDiv) {
+    contentDiv.innerHTML = fullHtml;
+  }
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+  const service = getServiceFromUrl();
+  setActiveMenu(service);
+  renderServiceContent(service);
+  
+  // Handle menu clicks
+  document.querySelectorAll('.service-menu-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      const service = this.dataset.service;
+      
+      // Update URL
+      const url = new URL(window.location);
+      url.searchParams.set('service', service);
+      window.history.pushState({}, '', url);
+      
+      // Update active menu
+      setActiveMenu(service);
+      
+      // Render new content
+      renderServiceContent(service);
+      
+      // Scroll ke atas
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+  
+  // Language change handler (sederhana)
+  document.querySelectorAll('.language-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      const lang = this.dataset.lang;
+      document.getElementById('selected-language').textContent = lang === 'id' ? 'Indonesia' : 'English';
+      // Refresh content with new language (implementasi sederhana)
+      const service = getServiceFromUrl();
+      renderServiceContent(service);
+    });
+  });
+});
+</script>
+</body>
+</html>
