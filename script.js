@@ -5,7 +5,16 @@ AOS.init({
   offset: 100
 });
 
-// Translations
+// Initialize Bootstrap Carousel
+document.addEventListener('DOMContentLoaded', function() {
+  var carousel = new bootstrap.Carousel(document.getElementById('projectsCarousel'), {
+    interval: 3000,
+    wrap: true,
+    pause: false
+  });
+});
+
+// ==================== TRANSLATIONS ====================
 const translations = {
   id: {
     // Navbar
@@ -36,7 +45,7 @@ const translations = {
     
     // About
     aboutSubtitle: 'Tentang Perusahaan',
-    aboutTitle: 'RSE IT Solution Services',
+    aboutTitle: 'RSE Digital Solution',
     aboutDescription: 'Kami adalah tim yang terdiri dari ahli strategi teknologi, arsitek jaringan, dan pakar keamanan siber yang berdedikasi untuk mempersiapkan masa depan perusahaan Anda. Dengan pengalaman lebih dari 12 tahun dalam mendesain, menerapkan, dan mengelola infrastruktur IT yang tangguh untuk mendorong pertumbuhan bisnis.',
     aboutVision: 'Visi',
     aboutVisionText: 'Menjadi mitra terpercaya dalam transformasi digital di Indonesia.',
@@ -52,156 +61,10 @@ const translations = {
     aboutWhy4Title: 'Harga Bersaing',
     aboutWhy4Desc: 'Solusi sesuai budget Anda',
     
-    // Manage Service
-    manageSubtitle: 'Layanan Utama',
-    manageTitle: 'Manage Service',
-    manageDescription: 'Layanan pengelolaan IT menyeluruh yang mencakup pemeliharaan preventif dan korektif untuk memastikan infrastruktur teknologi Anda selalu dalam kondisi optimal.',
-    managePreventive: 'Preventive Maintenance',
-    manageCorrective: 'Corrective Maintenance',
-    managePrev1: 'Pemeriksaan rutin hardware & software',
-    managePrev2: 'Update security patch & antivirus',
-    managePrev3: 'Backup data terjadwal',
-    managePrev4: 'Monitoring performa 24/7',
-    managePrev5: 'Audit keamanan berkala',
-    manageCorr1: 'Response darurat < 1 jam',
-    manageCorr2: 'Perbaikan hardware/software',
-    manageCorr3: 'Data recovery',
-    manageCorr4: 'Root cause analysis',
-    manageCorr5: 'Reporting & rekomendasi',
-    manageSupported: 'Yang Kami Dukung:',
-    manageBenefits: 'Keuntungan:',
-    manageBenefit1: 'Minimalkan downtime hingga 99.9%',
-    manageBenefit2: 'Biaya operasional lebih terprediksi',
-    manageBenefit3: 'Fokus pada bisnis inti',
-    
-    // Network
-    networkSubtitle: 'Infrastruktur Jaringan',
-    networkTitle: 'Network Infrastructure',
-    networkDescription: 'Kami merancang, membangun, dan mengelola infrastruktur jaringan yang handal, scalable, dan aman untuk mendukung konektivitas bisnis Anda dengan performa tinggi.',
-    networkFeatures: 'Fitur Utama',
-    networkFeature1: 'Desain jaringan enterprise-grade',
-    networkFeature2: 'Redundancy & high availability',
-    networkFeature3: 'Quality of Service (QoS)',
-    networkFeature4: 'Network segmentation',
-    networkFeature5: 'Monitoring & analytics real-time',
-    networkSupported: 'Yang Kami Sediakan:',
-    networkSolutions: 'Solusi Lengkap:',
-    networkSol1: 'LAN/WAN Design & Implementation',
-    networkSol2: 'Wireless & Mobility Solutions',
-    networkSol3: 'Network Security & Firewall',
-    networkSol4: 'Network Monitoring & Management',
-    
-    // Security
-    securitySubtitle: 'Keamanan Infrastruktur',
-    securityTitle: 'Security Infrastructure',
-    securityDescription: 'Melindungi aset digital dan infrastruktur kritis perusahaan Anda dengan pendekatan keamanan berlapis yang mencakup pencegahan, deteksi, dan respons terhadap ancaman siber.',
-    securityLayer1: 'Cegah',
-    securityLayer2: 'Deteksi',
-    securityLayer3: 'Respon',
-    securityLayer4: 'Pulihkan',
-    securitySupported: 'Layanan Keamanan:',
-    securityServ1: 'Firewall & IPS/IDS',
-    securityServ2: 'Antivirus & Antimalware',
-    securityServ3: 'Endpoint Protection',
-    securityServ4: 'Security Monitoring',
-    securityServ5: 'Vulnerability Assessment',
-    securityServ6: 'DDoS Protection',
-    
-    // Website
-    websiteSubtitle: 'Jasa Pembuatan Website',
-    websiteTitle: 'Website Development',
-    websiteDescription: 'Kami membantu Anda membangun website profesional yang responsif, cepat, dan SEO-friendly untuk meningkatkan visibilitas bisnis Anda di dunia digital.',
-    websiteTypes: 'Jenis Website:',
-    websiteType1: 'Company Profile',
-    websiteType1Desc: 'Website profesional untuk memperkenalkan perusahaan Anda',
-    websiteType2: 'E-Commerce',
-    websiteType2Desc: 'Toko online dengan sistem pembayaran terintegrasi',
-    websiteType3: 'CMS Website',
-    websiteType3Desc: 'Website dengan konten yang mudah diupdate',
-    websiteType4: 'Web Application',
-    websiteType4Desc: 'Aplikasi web custom sesuai kebutuhan bisnis',
-    websiteFeatures: 'Fitur Yang Kami Tawarkan:',
-    websiteFeature1: 'Responsive Design (Mobile Friendly)',
-    websiteFeature2: 'SEO Optimization',
-    websiteFeature3: 'Fast Loading & Performance',
-    websiteFeature4: 'SSL Security & HTTPS',
-    websiteFeature5: 'Content Management System',
-    websiteFeature6: 'Integration with Social Media',
-    websiteFeature7: 'Google Analytics & Tracking',
-    websiteFeature8: 'Maintenance & Support',
-    websiteTech: 'Teknologi:',
-    
-    // IOT
-    iotSubtitle: 'Internet of Things',
-    iotTitle: 'IOT Solutions',
-    iotDescription: 'Menghubungkan perangkat fisik ke internet untuk mengumpulkan data, mengotomatisasi proses, dan memberikan insight real-time yang membantu pengambilan keputusan bisnis yang lebih cerdas.',
-    iotApplications: 'Aplikasi IoT:',
-    iotApp1: 'Smart Manufacturing',
-    iotApp2: 'Smart Building',
-    iotApp3: 'Monitoring Suhu',
-    iotApp4: 'Fleet Tracking',
-    iotApp5: 'Smart Agriculture',
-    iotApp6: 'Healthcare IoT',
-    iotSupported: 'Komponen IoT:',
-    iotComp1: 'Sensor & Device',
-    iotComp2: 'Konektivitas',
-    iotComp3: 'IoT Platform',
-    iotComp4: 'Dashboard & Analytics',
-    
-    // Procurement
-    procurementSubtitle: 'Pengadaan Barang',
-    procurementTitle: 'IT Procurement',
-    procurementDescription: 'Layanan pengadaan perangkat keras, perangkat lunak, dan perlengkapan IT dengan harga kompetitif dan garansi resmi untuk mendukung kebutuhan operasional bisnis Anda.',
-    procurementCategories: 'Kategori Produk:',
-    procurementHardware: 'Perangkat Keras (Hardware)',
-    procurementHard1: 'Server & Storage',
-    procurementHard2: 'PC, Laptop & Workstation',
-    procurementHard3: 'Switch, Router & Access Point',
-    procurementHard4: 'Firewall & Security Appliance',
-    procurementHard5: 'Printer & Scanner',
-    procurementHard6: 'CCTV & Access Control',
-    procurementHard7: 'Kabel & Connector',
-    procurementHard8: 'Rack & Enclosure',
-    procurementSoftware: 'Perangkat Lunak (Software)',
-    procurementSoft1: 'Lisensi Windows & Office',
-    procurementSoft2: 'Antivirus & Keamanan',
-    procurementSoft3: 'Software Server',
-    procurementSoft4: 'Database & Backup',
-    procurementSoft5: 'Aplikasi Bisnis & ERP',
-    procurementSoft6: 'Software Desain',
-    procurementAccessories: 'Aksesoris & Sparepart',
-    procurementAcc1: 'Hardisk SSD/HDD',
-    procurementAcc2: 'RAM & Processor',
-    procurementAcc3: 'Power Supply & UPS',
-    procurementAcc4: 'Kabel & Adaptor',
-    procurementAcc5: 'Mouse, Keyboard & Webcam',
-    procurementAcc6: 'Tinta & Toner Printer',
-    procurementProcess: 'Proses Pengadaan:',
-    procurementStep1: 'Konsultasi Kebutuhan',
-    procurementStep2: 'Quote & Negosiasi',
-    procurementStep3: 'Pemesanan',
-    procurementStep4: 'Pembayaran',
-    procurementStep5: 'Pengiriman',
-    procurementStep6: 'Garansi & Dukungan',
-    procurementBenefits: 'Keuntungan:',
-    procurementBenefit1: 'Harga kompetitif',
-    procurementBenefit2: 'Garansi resmi',
-    procurementBenefit3: 'Pengiriman cepat',
-    procurementBenefit4: 'Dukungan teknis',
-    
     // Projects
-    projectsSubtitle: 'Portofolio & Testimoni',
-    projectsTitle: 'Proyek & Ulasan Klien',
-    projectsProject1: 'SD-WAN Implementation',
-    projectsProject1Desc: 'Implementasi jaringan SD-WAN untuk perusahaan retail',
-    projectsProject2: 'Security System',
-    projectsProject2Desc: 'Instalasi firewall dan keamanan jaringan',
-    projectsProject3: 'Company Website',
-    projectsProject3Desc: 'Pembuatan website perusahaan',
+    projectsSubtitle: 'Portofolio',
+    projectsTitle: 'Proyek Kami',
     projectsTestimonials: 'Apa Kata Klien Kami',
-    projectsTesti1: '"Tim RSE sangat profesional dan responsif. Implementasi jaringan berjalan lancar."',
-    projectsTesti2: '"Layanan maintenance sangat membantu. Respon cepat saat ada masalah."',
-    projectsTesti3: '"Website yang dibuat bagus dan sesuai keinginan. Recommended!"',
     
     // Contact
     contactSubtitle: 'Hubungi Kami',
@@ -215,18 +78,6 @@ const translations = {
     contactPhoneLabel: 'Telepon',
     contactEmailLabel: 'Email',
     contactOffice: 'Kantor',
-    
-    // Help
-    helpButton: 'Bantuan',
-    helpTitle: 'Pusat Bantuan',
-    helpQuickContact: 'Kontak Cepat',
-    helpFAQ: 'FAQ',
-    helpFAQ1Q: 'Bagaimana cara memulai konsultasi?',
-    helpFAQ1A: 'Klik tombol "Konsultasi Gratis" atau hubungi kami via WhatsApp.',
-    helpFAQ2Q: 'Berapa lama waktu respon?',
-    helpFAQ2A: 'Kami merespon dalam 15 menit pada jam kerja.',
-    helpSupport: 'Support 24/7',
-    helpSupportText: 'Layanan darurat 24 jam sehari, 7 hari seminggu',
     
     // Footer
     footerTagline: 'Aman · Cepat · Terpercaya',
@@ -245,10 +96,70 @@ const translations = {
     footerProcurement: 'Pengadaan Barang',
     footerContactTitle: 'Kontak',
     footerHours: 'Senin - Jumat, 09:00 - 18:00',
-    footerCopyright: '© 2025 RSE IT Solution Services. Hak Cipta Dilindungi.',
-    footerPrivacy: 'Kebijakan Privasi',
-    footerTerms: 'Syarat & Ketentuan'
+    footerCopyright: '© 2025 RSE Digital Solution. Hak Cipta Dilindungi.',
+    
+    // Modal Service Translations - ID
+    modalManageTitle: 'Manage Service',
+    modalManageDesc: 'Layanan pengelolaan IT menyeluruh yang mencakup pemeliharaan preventif dan korektif untuk memastikan infrastruktur teknologi Anda selalu dalam kondisi optimal.',
+    modalManagePrev: 'Preventive Maintenance',
+    modalManageCorr: 'Corrective Maintenance',
+    modalManagePrev1: 'Pemeriksaan rutin hardware & software',
+    modalManagePrev2: 'Update security patch & antivirus',
+    modalManagePrev3: 'Backup data terjadwal',
+    modalManagePrev4: 'Monitoring performa 24/7',
+    modalManagePrev5: 'Audit keamanan berkala',
+    modalManageCorr1: 'Response darurat < 1 jam',
+    modalManageCorr2: 'Perbaikan hardware/software',
+    modalManageCorr3: 'Data recovery',
+    modalManageCorr4: 'Root cause analysis',
+    modalManageCorr5: 'Reporting & rekomendasi',
+    modalManageSupported: 'Yang Kami Dukung:',
+    modalManageBenefits: 'Keuntungan:',
+    modalManageBenefit1: 'Minimalkan downtime hingga 99.9%',
+    modalManageBenefit2: 'Biaya operasional lebih terprediksi',
+    modalManageBenefit3: 'Fokus pada bisnis inti',
+    
+    modalNetworkTitle: 'Network Infrastructure',
+    modalNetworkDesc: 'Kami merancang, membangun, dan mengelola infrastruktur jaringan yang handal, scalable, dan aman untuk mendukung konektivitas bisnis Anda dengan performa tinggi.',
+    modalNetworkFeatures: 'Fitur Utama',
+    modalNetworkFeature1: 'Desain jaringan enterprise-grade',
+    modalNetworkFeature2: 'Redundancy & high availability',
+    modalNetworkFeature3: 'Quality of Service (QoS)',
+    modalNetworkFeature4: 'Network segmentation',
+    modalNetworkFeature5: 'Monitoring & analytics real-time',
+    modalNetworkAdvantages: 'Keunggulan',
+    modalNetworkAdv1: 'Skalabilitas tinggi',
+    modalNetworkAdv2: 'Keamanan berlapis',
+    modalNetworkAdv3: 'Ketersediaan 99.9%',
+    modalNetworkAdv4: 'Manajemen terpusat',
+    modalNetworkProvided: 'Yang Kami Sediakan:',
+    
+    modalSecurityTitle: 'Security Infrastructure',
+    modalSecurityDesc: 'Melindungi aset digital dan infrastruktur kritis perusahaan Anda dengan pendekatan keamanan berlapis yang mencakup pencegahan, deteksi, dan respons terhadap ancaman siber.',
+    modalSecurityLayers: 'Lapisan Keamanan',
+    modalSecurityLayer1: 'Cegah',
+    modalSecurityLayer2: 'Deteksi',
+    modalSecurityLayer3: 'Respon',
+    modalSecurityLayer4: 'Pulihkan',
+    modalSecurityServices: 'Layanan Keamanan',
+    
+    modalWebsiteTitle: 'Website Development',
+    modalWebsiteDesc: 'Kami membantu Anda membangun website profesional yang responsif, cepat, dan SEO-friendly untuk meningkatkan visibilitas bisnis Anda di dunia digital.',
+    modalWebsiteTypes: 'Jenis Website',
+    modalWebsiteFeatures: 'Fitur Yang Kami Tawarkan',
+    
+    modalIoTTitle: 'IoT Solutions',
+    modalIoTDesc: 'Menghubungkan perangkat fisik ke internet untuk mengumpulkan data, mengotomatisasi proses, dan memberikan insight real-time yang membantu pengambilan keputusan bisnis yang lebih cerdas.',
+    modalIoTApplications: 'Aplikasi IoT',
+    modalIoTComponents: 'Komponen IoT',
+    
+    modalProcurementTitle: 'IT Procurement',
+    modalProcurementDesc: 'Layanan pengadaan perangkat keras, perangkat lunak, dan perlengkapan IT dengan harga kompetitif dan garansi resmi untuk mendukung kebutuhan operasional bisnis Anda.',
+    modalProcurementCategories: 'Kategori Produk',
+    modalProcurementProcess: 'Proses Pengadaan',
+    modalProcurementBenefits: 'Keuntungan'
   },
+  
   en: {
     // Navbar
     navHome: 'Home',
@@ -260,7 +171,7 @@ const translations = {
     navWebsite: 'Website Development',
     navIot: 'IOT Solutions',
     navProcurement: 'IT Procurement',
-    navProjects: 'Projects & Testimonials',
+    navProjects: 'Portfolio',
     navContact: 'Contact',
     
     // Hero
@@ -278,7 +189,7 @@ const translations = {
     
     // About
     aboutSubtitle: 'About Us',
-    aboutTitle: 'RSE IT Solution Services',
+    aboutTitle: 'RSE Digital Solution',
     aboutDescription: 'We are a team of tech strategists, network architects, and cybersecurity experts dedicated to future-proofing your enterprise. With 12+ years of experience in designing, deploying, and managing robust IT infrastructures.',
     aboutVision: 'Vision',
     aboutVisionText: 'To be a trusted partner in digital transformation in Indonesia.',
@@ -294,156 +205,10 @@ const translations = {
     aboutWhy4Title: 'Competitive Price',
     aboutWhy4Desc: 'Solutions within your budget',
     
-    // Manage Service
-    manageSubtitle: 'Main Service',
-    manageTitle: 'Manage Service',
-    manageDescription: 'Comprehensive IT management service covering preventive and corrective maintenance to ensure your technology infrastructure is always in optimal condition.',
-    managePreventive: 'Preventive Maintenance',
-    manageCorrective: 'Corrective Maintenance',
-    managePrev1: 'Regular hardware & software checks',
-    managePrev2: 'Security patch & antivirus updates',
-    managePrev3: 'Scheduled data backup',
-    managePrev4: '24/7 performance monitoring',
-    managePrev5: 'Periodic security audit',
-    manageCorr1: 'Emergency response < 1 hour',
-    manageCorr2: 'Hardware/software repair',
-    manageCorr3: 'Data recovery',
-    manageCorr4: 'Root cause analysis',
-    manageCorr5: 'Reporting & recommendations',
-    manageSupported: 'We Support:',
-    manageBenefits: 'Benefits:',
-    manageBenefit1: 'Minimize downtime up to 99.9%',
-    manageBenefit2: 'More predictable operational costs',
-    manageBenefit3: 'Focus on core business',
-    
-    // Network
-    networkSubtitle: 'Network Infrastructure',
-    networkTitle: 'Network Infrastructure',
-    networkDescription: 'We design, build, and manage reliable, scalable, and secure network infrastructure to support your business connectivity with high performance.',
-    networkFeatures: 'Key Features',
-    networkFeature1: 'Enterprise-grade network design',
-    networkFeature2: 'Redundancy & high availability',
-    networkFeature3: 'Quality of Service (QoS)',
-    networkFeature4: 'Network segmentation',
-    networkFeature5: 'Real-time monitoring & analytics',
-    networkSupported: 'We Provide:',
-    networkSolutions: 'Complete Solutions:',
-    networkSol1: 'LAN/WAN Design & Implementation',
-    networkSol2: 'Wireless & Mobility Solutions',
-    networkSol3: 'Network Security & Firewall',
-    networkSol4: 'Network Monitoring & Management',
-    
-    // Security
-    securitySubtitle: 'Security Infrastructure',
-    securityTitle: 'Security Infrastructure',
-    securityDescription: 'Protect your digital assets and critical infrastructure with a layered security approach covering prevention, detection, and response to cyber threats.',
-    securityLayer1: 'Prevent',
-    securityLayer2: 'Detect',
-    securityLayer3: 'Respond',
-    securityLayer4: 'Recover',
-    securitySupported: 'Security Services:',
-    securityServ1: 'Firewall & IPS/IDS',
-    securityServ2: 'Antivirus & Antimalware',
-    securityServ3: 'Endpoint Protection',
-    securityServ4: 'Security Monitoring',
-    securityServ5: 'Vulnerability Assessment',
-    securityServ6: 'DDoS Protection',
-    
-    // Website
-    websiteSubtitle: 'Website Development',
-    websiteTitle: 'Website Development',
-    websiteDescription: 'We help you build professional, responsive, fast, and SEO-friendly websites to increase your business visibility in the digital world.',
-    websiteTypes: 'Website Types:',
-    websiteType1: 'Company Profile',
-    websiteType1Desc: 'Professional website to introduce your company',
-    websiteType2: 'E-Commerce',
-    websiteType2Desc: 'Online store with integrated payment system',
-    websiteType3: 'CMS Website',
-    websiteType3Desc: 'Website with easy-to-update content',
-    websiteType4: 'Web Application',
-    websiteType4Desc: 'Custom web application for your business needs',
-    websiteFeatures: 'Features We Offer:',
-    websiteFeature1: 'Responsive Design (Mobile Friendly)',
-    websiteFeature2: 'SEO Optimization',
-    websiteFeature3: 'Fast Loading & Performance',
-    websiteFeature4: 'SSL Security & HTTPS',
-    websiteFeature5: 'Content Management System',
-    websiteFeature6: 'Integration with Social Media',
-    websiteFeature7: 'Google Analytics & Tracking',
-    websiteFeature8: 'Maintenance & Support',
-    websiteTech: 'Technology:',
-    
-    // IOT
-    iotSubtitle: 'Internet of Things',
-    iotTitle: 'IOT Solutions',
-    iotDescription: 'Connect physical devices to the internet to collect data, automate processes, and provide real-time insights for smarter business decisions.',
-    iotApplications: 'IoT Applications:',
-    iotApp1: 'Smart Manufacturing',
-    iotApp2: 'Smart Building',
-    iotApp3: 'Temperature Monitoring',
-    iotApp4: 'Fleet Tracking',
-    iotApp5: 'Smart Agriculture',
-    iotApp6: 'Healthcare IoT',
-    iotSupported: 'IoT Components:',
-    iotComp1: 'Sensors & Devices',
-    iotComp2: 'Connectivity',
-    iotComp3: 'IoT Platform',
-    iotComp4: 'Dashboard & Analytics',
-    
-    // Procurement
-    procurementSubtitle: 'IT Procurement',
-    procurementTitle: 'IT Procurement',
-    procurementDescription: 'Hardware, software, and IT equipment procurement services with competitive prices and official warranty to support your business operations.',
-    procurementCategories: 'Product Categories:',
-    procurementHardware: 'Hardware',
-    procurementHard1: 'Server & Storage',
-    procurementHard2: 'PC, Laptop & Workstation',
-    procurementHard3: 'Switch, Router & Access Point',
-    procurementHard4: 'Firewall & Security Appliance',
-    procurementHard5: 'Printer & Scanner',
-    procurementHard6: 'CCTV & Access Control',
-    procurementHard7: 'Cables & Connectors',
-    procurementHard8: 'Rack & Enclosure',
-    procurementSoftware: 'Software',
-    procurementSoft1: 'Windows & Office License',
-    procurementSoft2: 'Antivirus & Security',
-    procurementSoft3: 'Server Software',
-    procurementSoft4: 'Database & Backup',
-    procurementSoft5: 'Business Apps & ERP',
-    procurementSoft6: 'Design Software',
-    procurementAccessories: 'Accessories & Spareparts',
-    procurementAcc1: 'SSD/HDD',
-    procurementAcc2: 'RAM & Processor',
-    procurementAcc3: 'Power Supply & UPS',
-    procurementAcc4: 'Cables & Adapters',
-    procurementAcc5: 'Mouse, Keyboard & Webcam',
-    procurementAcc6: 'Printer Ink & Toner',
-    procurementProcess: 'Procurement Process:',
-    procurementStep1: 'Needs Consultation',
-    procurementStep2: 'Quote & Negotiation',
-    procurementStep3: 'Order',
-    procurementStep4: 'Payment',
-    procurementStep5: 'Delivery',
-    procurementStep6: 'Warranty & Support',
-    procurementBenefits: 'Benefits:',
-    procurementBenefit1: 'Competitive prices',
-    procurementBenefit2: 'Official warranty',
-    procurementBenefit3: 'Fast delivery',
-    procurementBenefit4: 'Technical support',
-    
     // Projects
-    projectsSubtitle: 'Portfolio & Testimonials',
-    projectsTitle: 'Projects & Client Reviews',
-    projectsProject1: 'SD-WAN Implementation',
-    projectsProject1Desc: 'SD-WAN network implementation for retail company',
-    projectsProject2: 'Security System',
-    projectsProject2Desc: 'Firewall installation and network security',
-    projectsProject3: 'Company Website',
-    projectsProject3Desc: 'Corporate website development',
+    projectsSubtitle: 'Portfolio',
+    projectsTitle: 'Our Projects',
     projectsTestimonials: 'What Our Clients Say',
-    projectsTesti1: '"The RSE team is very professional and responsive. Network implementation went smoothly."',
-    projectsTesti2: '"Maintenance service is very helpful. Fast response when problems occur."',
-    projectsTesti3: '"The website is well-built and matches the requirements. Recommended!"',
     
     // Contact
     contactSubtitle: 'Contact Us',
@@ -475,19 +240,450 @@ const translations = {
     footerProcurement: 'IT Procurement',
     footerContactTitle: 'Contact',
     footerHours: 'Monday - Friday, 09:00 - 18:00',
-    footerCopyright: '© 2025 RSE IT Solution Services. All rights reserved.',
-    footerPrivacy: 'Privacy Policy',
-    footerTerms: 'Terms & Conditions'
+    footerCopyright: '© 2025 RSE Digital Solution. All rights reserved.',
+    
+    // Modal Service Translations - EN
+    modalManageTitle: 'Manage Service',
+    modalManageDesc: 'Comprehensive IT management service covering preventive and corrective maintenance to ensure your technology infrastructure is always in optimal condition.',
+    modalManagePrev: 'Preventive Maintenance',
+    modalManageCorr: 'Corrective Maintenance',
+    modalManagePrev1: 'Regular hardware & software checks',
+    modalManagePrev2: 'Security patch & antivirus updates',
+    modalManagePrev3: 'Scheduled data backup',
+    modalManagePrev4: '24/7 performance monitoring',
+    modalManagePrev5: 'Periodic security audit',
+    modalManageCorr1: 'Emergency response < 1 hour',
+    modalManageCorr2: 'Hardware/software repair',
+    modalManageCorr3: 'Data recovery',
+    modalManageCorr4: 'Root cause analysis',
+    modalManageCorr5: 'Reporting & recommendations',
+    modalManageSupported: 'We Support:',
+    modalManageBenefits: 'Benefits:',
+    modalManageBenefit1: 'Minimize downtime up to 99.9%',
+    modalManageBenefit2: 'More predictable operational costs',
+    modalManageBenefit3: 'Focus on core business',
+    
+    modalNetworkTitle: 'Network Infrastructure',
+    modalNetworkDesc: 'We design, build, and manage reliable, scalable, and secure network infrastructure to support your business connectivity with high performance.',
+    modalNetworkFeatures: 'Key Features',
+    modalNetworkFeature1: 'Enterprise-grade network design',
+    modalNetworkFeature2: 'Redundancy & high availability',
+    modalNetworkFeature3: 'Quality of Service (QoS)',
+    modalNetworkFeature4: 'Network segmentation',
+    modalNetworkFeature5: 'Real-time monitoring & analytics',
+    modalNetworkAdvantages: 'Advantages',
+    modalNetworkAdv1: 'High scalability',
+    modalNetworkAdv2: 'Layered security',
+    modalNetworkAdv3: '99.9% availability',
+    modalNetworkAdv4: 'Centralized management',
+    modalNetworkProvided: 'We Provide:',
+    
+    modalSecurityTitle: 'Security Infrastructure',
+    modalSecurityDesc: 'Protect your digital assets and critical infrastructure with a layered security approach covering prevention, detection, and response to cyber threats.',
+    modalSecurityLayers: 'Security Layers',
+    modalSecurityLayer1: 'Prevent',
+    modalSecurityLayer2: 'Detect',
+    modalSecurityLayer3: 'Respond',
+    modalSecurityLayer4: 'Recover',
+    modalSecurityServices: 'Security Services',
+    
+    modalWebsiteTitle: 'Website Development',
+    modalWebsiteDesc: 'We help you build professional, responsive, fast, and SEO-friendly websites to increase your business visibility in the digital world.',
+    modalWebsiteTypes: 'Website Types',
+    modalWebsiteFeatures: 'Features We Offer',
+    
+    modalIoTTitle: 'IoT Solutions',
+    modalIoTDesc: 'Connect physical devices to the internet to collect data, automate processes, and provide real-time insights for smarter business decisions.',
+    modalIoTApplications: 'IoT Applications',
+    modalIoTComponents: 'IoT Components',
+    
+    modalProcurementTitle: 'IT Procurement',
+    modalProcurementDesc: 'Hardware, software, and IT equipment procurement services with competitive prices and official warranty to support your business operations.',
+    modalProcurementCategories: 'Product Categories',
+    modalProcurementProcess: 'Procurement Process',
+    modalProcurementBenefits: 'Benefits'
   }
 };
 
-// Language switching
+// ==================== VARIABEL GLOBAL ====================
 let currentLang = 'id';
 
+// ==================== FUNGSI GET MODAL CONTENT ====================
+function getModalContent(service, lang) {
+  const t = translations[lang];
+  
+  const contents = {
+    manage: {
+      title: t.modalManageTitle,
+      content: `
+        <!-- DESKRIPSI -->
+        <div class="service-description">
+          <p class="service-desc-text">${t.modalManageDesc}</p>
+        </div>
+        
+        <!-- LAYANAN SPLIT (Preventive vs Corrective) -->
+        <div class="service-split mb-4">
+          <div class="split-card preventive">
+            <h4><i class="fas fa-calendar-check"></i> ${t.modalManagePrev}</h4>
+            <ul>
+              <li>${t.modalManagePrev1}</li>
+              <li>${t.modalManagePrev2}</li>
+              <li>${t.modalManagePrev3}</li>
+              <li>${t.modalManagePrev4}</li>
+              <li>${t.modalManagePrev5}</li>
+            </ul>
+          </div>
+          <div class="split-card corrective">
+            <h4><i class="fas fa-tools"></i> ${t.modalManageCorr}</h4>
+            <ul>
+              <li>${t.modalManageCorr1}</li>
+              <li>${t.modalManageCorr2}</li>
+              <li>${t.modalManageCorr3}</li>
+              <li>${t.modalManageCorr4}</li>
+              <li>${t.modalManageCorr5}</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- YANG KAMI SUPPORT -->
+        <div class="service-support mb-4">
+          <h4><i class="fas fa-headset me-2"></i> ${t.modalManageSupported}</h4>
+          <div class="support-grid">
+            <div class="support-item"><i class="fas fa-server"></i> Server</div>
+            <div class="support-item"><i class="fas fa-network-wired"></i> Network</div>
+            <div class="support-item"><i class="fas fa-database"></i> Database</div>
+            <div class="support-item"><i class="fas fa-desktop"></i> Workstation</div>
+            <div class="support-item"><i class="fas fa-print"></i> Printer</div>
+            <div class="support-item"><i class="fas fa-cloud"></i> Cloud</div>
+            <div class="support-item"><i class="fas fa-shield-alt"></i> Security</div>
+            <div class="support-item"><i class="fas fa-mobile-alt"></i> Mobile Device</div>
+          </div>
+        </div>
+        
+        <!-- KEUNGGULAN -->
+        <div class="service-benefits">
+          <h4><i class="fas fa-medal me-2"></i> ${t.modalManageBenefits}</h4>
+          <ul>
+            <li><i class="fas fa-check-circle text-success"></i> ${t.modalManageBenefit1}</li>
+            <li><i class="fas fa-check-circle text-success"></i> ${t.modalManageBenefit2}</li>
+            <li><i class="fas fa-check-circle text-success"></i> ${t.modalManageBenefit3}</li>
+          </ul>
+        </div>
+      `
+    },
+    
+    network: {
+      title: t.modalNetworkTitle,
+      content: `
+        <!-- DESKRIPSI -->
+        <div class="service-description">
+          <p class="service-desc-text">${t.modalNetworkDesc}</p>
+        </div>
+        
+        <!-- FITUR UTAMA & KEUNGGULAN -->
+        <div class="row g-4 mb-4">
+          <div class="col-md-6">
+            <div class="split-card">
+              <h4><i class="fas fa-cog"></i> ${t.modalNetworkFeatures}</h4>
+              <ul>
+                <li>${t.modalNetworkFeature1}</li>
+                <li>${t.modalNetworkFeature2}</li>
+                <li>${t.modalNetworkFeature3}</li>
+                <li>${t.modalNetworkFeature4}</li>
+                <li>${t.modalNetworkFeature5}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="split-card">
+              <h4><i class="fas fa-star"></i> ${t.modalNetworkAdvantages}</h4>
+              <ul>
+                <li>${t.modalNetworkAdv1}</li>
+                <li>${t.modalNetworkAdv2}</li>
+                <li>${t.modalNetworkAdv3}</li>
+                <li>${t.modalNetworkAdv4}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- YANG KAMI SUPPORT -->
+        <div class="service-support mb-4">
+          <h4><i class="fas fa-box me-2"></i> ${t.modalNetworkProvided}</h4>
+          <div class="support-grid">
+            <div class="support-item">LAN/WAN</div>
+            <div class="support-item">Wireless</div>
+            <div class="support-item">Firewall</div>
+            <div class="support-item">Load Balancer</div>
+            <div class="support-item">VPN</div>
+            <div class="support-item">SD-WAN</div>
+            <div class="support-item">CCTV Network</div>
+            <div class="support-item">Fiber Optic</div>
+          </div>
+        </div>
+        
+        <!-- KEUNGGULAN (SINGKAT) -->
+        <div class="service-benefits">
+          <h4><i class="fas fa-medal me-2"></i> Keunggulan Layanan</h4>
+          <ul>
+            <li><i class="fas fa-check-circle text-success"></i> Desain sesuai kebutuhan bisnis</li>
+            <li><i class="fas fa-check-circle text-success"></i> Skalabilitas tinggi</li>
+            <li><i class="fas fa-check-circle text-success"></i> Monitoring 24/7</li>
+          </ul>
+        </div>
+      `
+    },
+    
+    security: {
+      title: t.modalSecurityTitle,
+      content: `
+        <!-- DESKRIPSI -->
+        <div class="service-description">
+          <p class="service-desc-text">${t.modalSecurityDesc}</p>
+        </div>
+        
+        <!-- LAPISAN KEAMANAN -->
+        <div class="mb-4">
+          <h4 class="mb-3"><i class="fas fa-layer-group me-2"></i> ${t.modalSecurityLayers}</h4>
+          <div class="security-layers">
+            <div class="layer-item">
+              <span class="layer-icon"><i class="fas fa-shield"></i></span>
+              <span>${t.modalSecurityLayer1}</span>
+            </div>
+            <div class="layer-item">
+              <span class="layer-icon"><i class="fas fa-eye"></i></span>
+              <span>${t.modalSecurityLayer2}</span>
+            </div>
+            <div class="layer-item">
+              <span class="layer-icon"><i class="fas fa-bolt"></i></span>
+              <span>${t.modalSecurityLayer3}</span>
+            </div>
+            <div class="layer-item">
+              <span class="layer-icon"><i class="fas fa-sync-alt"></i></span>
+              <span>${t.modalSecurityLayer4}</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- YANG KAMI SUPPORT -->
+        <div class="service-support mb-4">
+          <h4><i class="fas fa-shield-alt me-2"></i> ${t.modalSecurityServices}</h4>
+          <div class="support-grid">
+            <div class="support-item"><i class="fas fa-fire"></i> Firewall</div>
+            <div class="support-item"><i class="fas fa-virus"></i> Antivirus</div>
+            <div class="support-item"><i class="fas fa-desktop"></i> Endpoint</div>
+            <div class="support-item"><i class="fas fa-eye"></i> Monitoring</div>
+            <div class="support-item"><i class="fas fa-search"></i> VA</div>
+            <div class="support-item"><i class="fas fa-cloud"></i> DDoS Protection</div>
+          </div>
+        </div>
+        
+        <!-- KEUNGGULAN -->
+        <div class="service-benefits">
+          <h4><i class="fas fa-medal me-2"></i> Keunggulan Keamanan</h4>
+          <ul>
+            <li><i class="fas fa-check-circle text-success"></i> Perlindungan 24/7</li>
+            <li><i class="fas fa-check-circle text-success"></i> Update ancaman real-time</li>
+            <li><i class="fas fa-check-circle text-success"></i> Tim response insiden</li>
+          </ul>
+        </div>
+      `
+    },
+    
+    website: {
+      title: t.modalWebsiteTitle,
+      content: `
+        <!-- DESKRIPSI -->
+        <div class="service-description">
+          <p class="service-desc-text">${t.modalWebsiteDesc}</p>
+        </div>
+        
+        <!-- JENIS WEBSITE & FITUR -->
+        <div class="row g-4 mb-4">
+          <div class="col-md-6">
+            <div class="split-card">
+              <h4><i class="fas fa-laptop"></i> ${t.modalWebsiteTypes}</h4>
+              <ul>
+                <li><strong>Company Profile</strong> - ${lang === 'id' ? 'Website profesional perusahaan' : 'Professional company website'}</li>
+                <li><strong>E-Commerce</strong> - ${lang === 'id' ? 'Toko online + payment gateway' : 'Online store + payment gateway'}</li>
+                <li><strong>CMS Website</strong> - ${lang === 'id' ? 'Konten mudah diupdate' : 'Easy-to-update content'}</li>
+                <li><strong>Web Application</strong> - ${lang === 'id' ? 'Aplikasi web custom' : 'Custom web application'}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="split-card">
+              <h4><i class="fas fa-star"></i> ${t.modalWebsiteFeatures}</h4>
+              <ul>
+                <li>✓ Responsive Design</li>
+                <li>✓ SEO Optimization</li>
+                <li>✓ Fast Loading</li>
+                <li>✓ SSL Security</li>
+                <li>✓ CMS Included</li>
+                <li>✓ Google Analytics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- YANG KAMI SUPPORT -->
+        <div class="service-support mb-4">
+          <h4><i class="fas fa-code me-2"></i> Teknologi Yang Kami Gunakan</h4>
+          <div class="support-grid">
+            <div class="support-item">HTML5/CSS3</div>
+            <div class="support-item">JavaScript</div>
+            <div class="support-item">PHP/Laravel</div>
+            <div class="support-item">WordPress</div>
+            <div class="support-item">MySQL</div>
+            <div class="support-item">Bootstrap</div>
+          </div>
+        </div>
+        
+        <!-- KEUNGGULAN -->
+        <div class="service-benefits">
+          <h4><i class="fas fa-medal me-2"></i> Keunggulan Website Kami</h4>
+          <ul>
+            <li><i class="fas fa-check-circle text-success"></i> Desain modern & responsif</li>
+            <li><i class="fas fa-check-circle text-success"></i> SEO friendly</li>
+            <li><i class="fas fa-check-circle text-success"></i> Maintenance gratis 1 bulan</li>
+          </ul>
+        </div>
+      `
+    },
+    
+    iot: {
+      title: t.modalIoTTitle,
+      content: `
+        <!-- DESKRIPSI -->
+        <div class="service-description">
+          <p class="service-desc-text">${t.modalIoTDesc}</p>
+        </div>
+        
+        <!-- APLIKASI & KOMPONEN -->
+        <div class="row g-4 mb-4">
+          <div class="col-md-6">
+            <div class="split-card">
+              <h4><i class="fas fa-microchip"></i> ${t.modalIoTApplications}</h4>
+              <ul>
+                <li>Smart Manufacturing</li>
+                <li>Smart Building</li>
+                <li>Temperature Monitoring</li>
+                <li>Fleet Tracking</li>
+                <li>Smart Agriculture</li>
+                <li>Healthcare IoT</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="split-card">
+              <h4><i class="fas fa-cog"></i> ${t.modalIoTComponents}</h4>
+              <ul>
+                <li>Sensors & Devices</li>
+                <li>Connectivity (WiFi/LoRa/4G)</li>
+                <li>IoT Platform</li>
+                <li>Dashboard & Analytics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- YANG KAMI SUPPORT -->
+        <div class="service-support mb-4">
+          <h4><i class="fas fa-wifi me-2"></i> Konektivitas & Hardware</h4>
+          <div class="support-grid">
+            <div class="support-item">ESP32/8266</div>
+            <div class="support-item">Arduino</div>
+            <div class="support-item">Raspberry Pi</div>
+            <div class="support-item">LoRaWAN</div>
+            <div class="support-item">MQTT</div>
+            <div class="support-item">Node-RED</div>
+          </div>
+        </div>
+        
+        <!-- KEUNGGULAN -->
+        <div class="service-benefits">
+          <h4><i class="fas fa-medal me-2"></i> Keunggulan IoT Kami</h4>
+          <ul>
+            <li><i class="fas fa-check-circle text-success"></i> Real-time monitoring</li>
+            <li><i class="fas fa-check-circle text-success"></i> Integrasi mudah</li>
+            <li><i class="fas fa-check-circle text-success"></i> Skalabel untuk industri</li>
+          </ul>
+        </div>
+      `
+    },
+    
+    procurement: {
+      title: t.modalProcurementTitle,
+      content: `
+        <!-- DESKRIPSI -->
+        <div class="service-description">
+          <p class="service-desc-text">${t.modalProcurementDesc}</p>
+        </div>
+        
+        <!-- KATEGORI & PROSES -->
+        <div class="row g-4 mb-4">
+          <div class="col-md-6">
+            <div class="split-card">
+              <h4><i class="fas fa-box"></i> ${t.modalProcurementCategories}</h4>
+              <ul>
+                <li><strong>Hardware:</strong> Server, PC, Network, Printer</li>
+                <li><strong>Software:</strong> License, Antivirus, ERP</li>
+                <li><strong>Accessories:</strong> HDD, RAM, Cable, UPS</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="split-card">
+              <h4><i class="fas fa-clock"></i> ${t.modalProcurementProcess}</h4>
+              <ul>
+                <li>1. Konsultasi kebutuhan</li>
+                <li>2. Quote harga</li>
+                <li>3. Proses order</li>
+                <li>4. Pembayaran</li>
+                <li>5. Pengiriman</li>
+                <li>6. Garansi & support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- BRAND YANG KAMI SUPPORT -->
+        <div class="service-support mb-4">
+          <h4><i class="fas fa-building me-2"></i> Brand Ternama</h4>
+          <div class="support-grid">
+            <div class="support-item">Cisco</div>
+            <div class="support-item">MikroTik</div>
+            <div class="support-item">Dell</div>
+            <div class="support-item">HP</div>
+            <div class="support-item">Lenovo</div>
+            <div class="support-item">Synology</div>
+            <div class="support-item">Fortinet</div>
+            <div class="support-item">Ubiquiti</div>
+          </div>
+        </div>
+        
+        <!-- KEUNGGULAN -->
+        <div class="service-benefits">
+          <h4><i class="fas fa-medal me-2"></i> ${t.modalProcurementBenefits}</h4>
+          <ul>
+            <li><i class="fas fa-check-circle text-success"></i> Harga kompetitif</li>
+            <li><i class="fas fa-check-circle text-success"></i> Garansi resmi</li>
+            <li><i class="fas fa-check-circle text-success"></i> Pengiriman cepat</li>
+            <li><i class="fas fa-check-circle text-success"></i> Technical support</li>
+          </ul>
+        </div>
+      `
+    }
+  };
+  
+  return contents[service];
+}
+
+// ==================== FUNGSI CHANGE LANGUAGE ====================
 function changeLanguage(lang) {
   currentLang = lang;
   
-  // Update all elements with IDs that match translation keys
+  // Update semua elemen dengan ID
   for (const [key, value] of Object.entries(translations[lang])) {
     const element = document.getElementById(key);
     if (element) {
@@ -495,25 +691,76 @@ function changeLanguage(lang) {
     }
   }
   
-  // Update dropdown toggle text
+  // Update dropdown services text
   const servicesDropdown = document.getElementById('servicesDropdown');
   if (servicesDropdown) {
     servicesDropdown.textContent = translations[lang].navServices;
   }
   
-  // Update language buttons
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.remove('active');
+  // Mapping service ke property translations
+  const serviceMap = {
+    'manage': 'navManageService',
+    'network': 'navNetwork',
+    'security': 'navSecurity',
+    'website': 'navWebsite',
+    'iot': 'navIot',
+    'procurement': 'navProcurement'
+  };
+  
+  // Update semua dropdown item
+  document.querySelectorAll('.dropdown-item[data-service]').forEach(item => {
+    const service = item.getAttribute('data-service');
+    const translationKey = serviceMap[service];
+    if (translationKey) {
+      item.textContent = translations[lang][translationKey];
+    }
   });
-  document.querySelectorAll(`.lang-btn[data-lang="${lang}"]`).forEach(btn => {
-    btn.classList.add('active');
+  
+  // Update selected language text di dropdown
+  const selectedLangSpan = document.getElementById('selected-language');
+  if (selectedLangSpan) {
+    selectedLangSpan.textContent = lang === 'id' ? 'Indonesia' : 'English';
+  }
+  
+  // Update active state di dropdown items
+  document.querySelectorAll('.language-item').forEach(item => {
+    item.classList.remove('active');
+    if (item.dataset.lang === lang) {
+      item.classList.add('active');
+      // Update icon check
+      const icon = item.querySelector('i');
+      if (icon) icon.style.opacity = '1';
+    } else {
+      const icon = item.querySelector('i');
+      if (icon) icon.style.opacity = '0';
+    }
   });
+  
+  // Update modal if open
+  const modalElement = document.getElementById('serviceModal');
+  if (modalElement.classList.contains('show')) {
+    const modalTitle = document.getElementById('serviceModalLabel').textContent.toLowerCase();
+    let service = 'manage';
+    if (modalTitle.includes('network')) service = 'network';
+    else if (modalTitle.includes('security')) service = 'security';
+    else if (modalTitle.includes('website')) service = 'website';
+    else if (modalTitle.includes('iot')) service = 'iot';
+    else if (modalTitle.includes('procurement')) service = 'procurement';
+    
+    const content = getModalContent(service, lang);
+    document.getElementById('serviceModalLabel').textContent = content.title;
+    document.getElementById('serviceModalBody').innerHTML = content.content;
+  }
 }
 
-// Language switcher
-document.querySelectorAll('.lang-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    changeLanguage(btn.dataset.lang);
+// ==================== EVENT LISTENERS ====================
+
+// Language dropdown
+document.querySelectorAll('.language-item').forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+    const lang = item.dataset.lang;
+    changeLanguage(lang);
   });
 });
 
@@ -527,54 +774,60 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
-
 // Contact form
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
-  
-  if (!name || !email || !message) {
-    alert(currentLang === 'id' ? 'Harap isi semua field yang wajib diisi' : 'Please fill in all required fields');
-    return;
-  }
-  
-  alert(currentLang === 'id' 
-    ? 'Terima kasih! Pesan Anda telah terkirim.' 
-    : 'Thank you! Your message has been sent.');
-  this.reset();
-});
-
-// WhatsApp
-document.querySelectorAll('#helpWhatsApp, #contactWhatsApp').forEach(btn => {
-  btn.addEventListener('click', (e) => {
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const phoneNumber = '628123456789';
-    const message = currentLang === 'id' 
-      ? 'Halo RSE IT Solution Services, saya ingin berkonsultasi tentang layanan Anda.'
-      : 'Hello RSE IT Solution Services, I would like to inquire about your services.';
-    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    if (!name || !email || !message) {
+      alert(currentLang === 'id' ? 'Harap isi semua field yang wajib diisi' : 'Please fill in all required fields');
+      return;
+    }
+    
+    alert(currentLang === 'id' 
+      ? 'Terima kasih! Pesan Anda telah terkirim.' 
+      : 'Thank you! Your message has been sent.');
+    contactForm.reset();
+  });
+}
+
+// Help button
+const helpButton = document.getElementById('helpButton');
+if (helpButton) {
+  helpButton.addEventListener('click', () => {
+    alert(currentLang === 'id' 
+      ? 'Halo! Ada yang bisa kami bantu? Silakan hubungi kami via WhatsApp.' 
+      : 'Hello! How can we help you? Please contact us via WhatsApp.');
+  });
+}
+
+// Service Modal - Open
+document.querySelectorAll('.service-link, .dropdown-item[data-service]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const service = link.getAttribute('data-service');
+    
+    if (service) {
+      const content = getModalContent(service, currentLang);
+      document.getElementById('serviceModalLabel').textContent = content.title;
+      document.getElementById('serviceModalBody').innerHTML = content.content;
+      
+      const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
+      modal.show();
+    }
   });
 });
 
 // Active nav link
 window.addEventListener('scroll', () => {
   const sections = document.querySelectorAll('section[id]');
+  if (sections.length === 0) return;
+  
   const scrollY = window.pageYOffset;
   
   sections.forEach(section => {
@@ -599,10 +852,20 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Update copyright year
   const year = new Date().getFullYear();
-  document.querySelectorAll('.copyright span').forEach(el => {
-    if (el.id === 'footerCopyright') {
-      const text = el.textContent;
-      el.textContent = text.replace('2025', year);
-    }
+  const copyrightEl = document.getElementById('footerCopyright');
+  if (copyrightEl) {
+    copyrightEl.textContent = copyrightEl.textContent.replace('2025', year);
+  }
+  
+  // Tutup navbar mobile saat link diklik
+  const navLinks = document.querySelectorAll('.nav-link');
+  const navbarCollapse = document.querySelector('.navbar-collapse');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        navbarCollapse.classList.remove('show');
+      }
+    });
   });
 });
